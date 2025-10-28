@@ -1,0 +1,753 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Softer blue color palette */
+  --color-primary: #1a365d;
+  --color-secondary: #2563eb;
+  --color-accent: #3b82f6;
+  --color-background: #f8fafc;
+  --color-text: #1e293b;
+  
+  /* Muted blue variants */
+  --blue-50: #f0f5ff;
+  --blue-100: #e5edff;
+  --blue-200: #cddbfe;
+  --blue-300: #b4c6fc;
+  --blue-400: #8ba7f9;
+  --blue-500: #6b8af7;
+  --blue-600: #4b6bdb;
+  --blue-700: #3b4eb8;
+  --blue-800: #2c3d8f;
+  --blue-900: #1e2a5e;
+}
+
+/* Adjust standard blue colors */
+.text-blue-600 { color: var(--blue-600) !important; }
+.text-blue-700 { color: var(--blue-700) !important; }
+.bg-blue-600 { background-color: var(--blue-600) !important; }
+.bg-blue-700 { background-color: var(--blue-700) !important; }
+.bg-blue-900 { background-color: var(--blue-900) !important; }
+
+/* Adjust gradients */
+.bg-gradient-to-r {
+  &.from-blue-900 {
+    --tw-gradient-from: var(--blue-900) !important;
+  }
+  &.to-blue-700 {
+    --tw-gradient-to: var(--blue-700) !important;
+  }
+}
+
+/* Adjust border colors */
+.border-blue-600 { border-color: var(--blue-600) !important; }
+
+/* Adjust hover states */
+.hover\:bg-blue-700:hover { background-color: var(--blue-700) !important; }
+.hover\:text-blue-700:hover { color: var(--blue-700) !important; }
+
+/* Existing animations */
+@keyframes pulse {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 1; }
+}
+
+@keyframes flow {
+  0% { transform: translateX(-100%) var(--rotation); }
+  100% { transform: translateX(100%) var(--rotation); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.glow-line {
+  --rotation: rotate(0deg);
+  box-shadow: 0 0 10px rgba(96, 165, 250, 0.4),
+              0 0 20px rgba(96, 165, 250, 0.2),
+              0 0 30px rgba(96, 165, 250, 0.1);
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.8s ease-out forwards;
+}
+
+/* Enhanced highlight animation */
+@keyframes highlightPulse {
+  0%, 100% { 
+    box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.4);
+    transform: scale(1);
+  }
+  50% { 
+    box-shadow: 0 0 0 10px rgba(59, 130, 246, 0.1);
+    transform: scale(1.01);
+  }
+}
+
+.highlight-pulse {
+  animation: highlightPulse 2s ease-in-out infinite;
+}
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Enhanced modal animations */
+@keyframes modalSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-50px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.modal-enter {
+  animation: modalSlideIn 0.3s ease-out forwards;
+}
+
+.hero-gradient {
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, var(--blue-400) 0%, var(--blue-600) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Ensure proper text rendering and prevent cutoff */
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.2;
+  overflow: visible;
+}
+
+/* Fix for gradient text clipping */
+.bg-clip-text {
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  padding-bottom: 0.1em;
+}
+
+/* YouTube Background Optimizations */
+.video-background {
+  pointer-events: none;
+  user-select: none;
+}
+
+.video-background video {
+  pointer-events: none;
+}
+
+/* Ensure video covers full area without letterboxing */
+.video-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  transform: translateX(-50%) translateY(-50%);
+  object-fit: cover;
+}
+
+/* Enhanced text shadows for better readability over video */
+.hero-text-shadow {
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5), 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Backdrop blur support for better overlay effects */
+@supports (backdrop-filter: blur(10px)) {
+  .backdrop-blur-enhanced {
+    backdrop-filter: blur(10px);
+  }
+}
+/* Video background specific styles */
+/* WhatsApp Floating Action Button Styles */
+.whatsapp-fab {
+  /* Positioning */
+  position: fixed;
+  bottom: 20px;
+  left: 20px; /* Repositioned to bottom left corner */
+  z-index: 1002; /* Highest priority for visibility */
+  
+  /* Size matching Voiceflow widget dimensions */
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  border: none;
+  
+  /* WhatsApp official colors */
+  background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+  color: white;
+  
+  /* Flexbox for centering icon */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  /* Shadow and visual effects */
+  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4),
+              0 2px 8px rgba(0, 0, 0, 0.25),
+              0 0 0 1px rgba(255, 255, 255, 0.1);
+  
+  /* Smooth transitions */
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  
+  /* Cursor and interaction */
+  cursor: pointer;
+  outline: none;
+  
+  /* Relative positioning for pulse ring */
+  position: relative;
+  overflow: visible;
+  
+  /* Force visibility */
+  opacity: 1 !important;
+  visibility: visible !important;
+  pointer-events: auto !important;
+}
+
+/* Hover effects */
+.whatsapp-fab:hover {
+  transform: scale(1.05); /* Slightly reduced to match Voiceflow behavior */
+  box-shadow: 0 6px 25px rgba(37, 211, 102, 0.5),
+              0 4px 12px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(135deg, #2BE46C 0%, #14A085 100%);
+}
+
+/* Active/pressed state */
+.whatsapp-fab:active {
+  transform: scale(0.95);
+  transition-duration: 0.1s;
+}
+
+/* Focus state for accessibility */
+.whatsapp-fab:focus {
+  outline: 3px solid rgba(37, 211, 102, 0.5);
+  outline-offset: 2px;
+}
+
+/* Icon styling */
+.whatsapp-icon {
+  position: relative;
+  z-index: 2;
+  transition: transform 0.3s ease;
+  width: 28px !important;
+  height: 28px !important;
+  color: white !important;
+  opacity: 1 !important;
+}
+
+/* Hide the MessageCircle icon when showing WhatsApp logo */
+.whatsapp-fab:hover .whatsapp-icon {
+  opacity: 0;
+  transform: scale(0.8);
+}
+
+/* WhatsApp logo styling */
+.whatsapp-logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.8);
+  opacity: 0;
+  transition: all 0.3s ease;
+  z-index: 3;
+  width: 28px;
+  height: 28px;
+  fill: white !important;
+}
+
+/* Show WhatsApp logo on hover */
+.whatsapp-fab:hover .whatsapp-logo {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+/* Pulse animation ring */
+.whatsapp-pulse-ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 64px;
+  height: 64px;
+  border: 2px solid rgba(37, 211, 102, 0.6);
+  border-radius: 50%;
+  animation: whatsapp-pulse 2s infinite;
+  pointer-events: none;
+}
+
+/* Pulse animation keyframes */
+@keyframes whatsapp-pulse {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+  70% {
+    transform: translate(-50%, -50%) scale(1.4);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1.4);
+    opacity: 0;
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .whatsapp-fab {
+    /* Size matching mobile Voiceflow widget */
+    width: 56px;
+    height: 56px;
+    bottom: 20px;
+    left: 16px; /* Positioned in bottom left on mobile */
+  }
+  
+  .whatsapp-pulse-ring {
+    width: 56px;
+    height: 56px;
+  }
+  
+  .whatsapp-icon,
+  .whatsapp-logo {
+    width: 24px !important;
+    height: 24px !important;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .whatsapp-fab {
+    border: 2px solid #25D366;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .whatsapp-fab,
+  .whatsapp-icon,
+  .whatsapp-logo {
+    transition: none;
+  }
+  
+  .whatsapp-pulse-ring {
+    animation: none;
+  }
+  
+  .whatsapp-fab:hover {
+    transform: none;
+  }
+}
+
+/* WhatsApp container for better positioning control - Updated for left positioning */
+.whatsapp-container {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 1002;
+  pointer-events: none; /* Allow clicks to pass through container */
+}
+
+.whatsapp-container .whatsapp-fab {
+  pointer-events: auto; /* Re-enable clicks on the button itself */
+  position: relative;
+  bottom: auto;
+  left: auto;
+  margin: 20px 20px 20px 20px; /* Consistent margin on all sides */
+}
+
+/* Responsive container adjustments */
+@media (max-width: 768px) {
+  .whatsapp-container .whatsapp-fab {
+    margin: 16px 16px 16px 16px; /* Consistent mobile margins */
+  }
+}
+
+/* Hide Voiceflow default launcher since we're using custom FAB */
+div[data-testid="voiceflow-chat"],
+div[data-testid="launcher"],
+.vfrc-launcher,
+[class*="vfrc-launcher"],
+[data-vf-chat],
+[class*="voiceflow"] {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+}
+
+/* Force hide any Voiceflow widget containers */
+div[id*="voiceflow"],
+div[class*="voiceflow"],
+iframe[src*="voiceflow"] {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+}
+
+/* Ensure Voiceflow chat window appears above FAB when opened */
+div[data-testid="chat"] {
+  z-index: 1004 !important;
+}
+
+/* Additional spacing for action buttons area - Updated for left positioning */
+.action-buttons-area {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 200px;
+  height: 100px;
+  pointer-events: none;
+  z-index: 999;
+}
+
+/* Expandable FAB Styles */
+.expandable-fab-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1003;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  pointer-events: none;
+}
+
+/* Main FAB Button */
+.fab-main {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  border: none;
+  background: linear-gradient(135deg, #4f46e5 0%, #3730a3 100%);
+  color: white;
+  cursor: pointer;
+  outline: none;
+  pointer-events: auto;
+  
+  /* Shadow and visual effects */
+  box-shadow: 0 4px 20px rgba(79, 70, 229, 0.4),
+              0 2px 8px rgba(0, 0, 0, 0.25),
+              0 0 0 1px rgba(255, 255, 255, 0.1);
+  
+  /* Smooth transitions */
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  
+  /* Flexbox for centering */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  /* Force visibility */
+  opacity: 1 !important;
+  visibility: visible !important;
+  
+  /* Add subtle pulse animation to indicate multiple functions */
+  position: relative;
+}
+
+.fab-main::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  border-radius: 50%;
+  background: linear-gradient(45deg, #10b981, #3b82f6, #8b5cf6);
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.fab-main:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 25px rgba(79, 70, 229, 0.5),
+              0 4px 12px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+}
+
+.fab-main:hover::before {
+  opacity: 0.3;
+}
+
+.fab-main:active {
+  transform: scale(0.95);
+  transition-duration: 0.1s;
+}
+
+.fab-main.expanded {
+  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+  transform: rotate(180deg);
+}
+
+.fab-main.expanded:hover {
+  background: linear-gradient(135deg, #f87171 0%, #ef4444 100%);
+  transform: rotate(180deg) scale(1.05);
+}
+
+/* Icon container for smooth transitions */
+.fab-icon-container {
+  position: relative;
+  width: 28px;
+  height: 28px;
+}
+
+.fab-menu-icon,
+.fab-close-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  width: 28px;
+  height: 28px;
+}
+
+.fab-menu-icon.visible,
+.fab-close-icon.visible {
+  opacity: 1;
+  transform: translate(-50%, -50%) rotate(0deg) scale(1);
+}
+
+.fab-menu-icon.hidden,
+.fab-close-icon.hidden {
+  opacity: 0;
+  transform: translate(-50%, -50%) rotate(90deg) scale(0.8);
+}
+
+/* Backdrop */
+.fab-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(2px);
+  z-index: -1;
+  pointer-events: auto;
+  animation: fadeIn 0.2s ease-out;
+}
+
+/* Sub-buttons container */
+.fab-sub-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 16px;
+  pointer-events: auto;
+}
+
+/* Individual sub-buttons */
+.fab-sub-button {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  background: white;
+  border: none;
+  border-radius: 28px;
+  cursor: pointer;
+  outline: none;
+  
+  /* Shadow and visual effects */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15),
+              0 2px 4px rgba(0, 0, 0, 0.1);
+  
+  /* Animation */
+  animation: slideInRight 0.3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  transform: translateX(100px);
+  opacity: 0;
+  
+  /* Transitions */
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  
+  /* Minimum width for consistency */
+  min-width: 140px;
+  justify-content: flex-start;
+}
+
+.fab-sub-button:hover {
+  transform: translateX(-4px) scale(1.02);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2),
+              0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.fab-sub-button:active {
+  transform: translateX(-4px) scale(0.98);
+}
+
+/* Sub-button specific colors */
+.fab-whatsapp {
+  color: #25D366;
+}
+
+.fab-whatsapp:hover {
+  background: #f0f9ff;
+  color: #128C7E;
+}
+
+.fab-chatbot {
+  color: var(--blue-600);
+}
+
+.fab-chatbot:hover {
+  background: #f0f9ff;
+  color: var(--blue-700);
+}
+
+.fab-call {
+  color: #8b5cf6;
+}
+
+.fab-call:hover {
+  background: #faf5ff;
+  color: #7c3aed;
+}
+
+/* Labels */
+.fab-label {
+  font-size: 14px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+/* Animations */
+@keyframes slideInRight {
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .expandable-fab-container {
+    bottom: 16px;
+    right: 16px;
+  }
+  
+  .fab-main {
+    width: 56px;
+    height: 56px;
+  }
+  
+  .fab-icon-container {
+    width: 24px;
+    height: 24px;
+  }
+  
+  .fab-menu-icon,
+  .fab-close-icon {
+    width: 24px;
+    height: 24px;
+  }
+  
+  .fab-sub-button {
+    padding: 10px 14px;
+    min-width: 120px;
+    gap: 10px;
+  }
+  
+  .fab-label {
+    font-size: 13px;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .fab-main {
+    border: 2px solid var(--blue-600);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  }
+  
+  .fab-sub-button {
+    border: 1px solid #e5e7eb;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .fab-main,
+  .fab-sub-button,
+  .fab-menu-icon,
+  .fab-close-icon,
+  .fab-backdrop {
+    transition: none;
+    animation: none;
+  }
+  
+  .fab-main.expanded {
+    transform: none;
+  }
+  
+  .fab-sub-button {
+    transform: none;
+    opacity: 1;
+  }
+  
+  .fab-sub-button:hover {
+    transform: none;
+  }
+}
+
+/* Focus states for accessibility */
+.fab-main:focus,
+.fab-sub-button:focus {
+  outline: 3px solid rgba(79, 70, 229, 0.5);
+  outline-offset: 2px;
+}
+
+@media (max-width: 768px) {
+  .video-background video {
+    /* Ensure proper scaling on mobile */
+    width: 100vw;
+    height: 56.25vw; /* 16:9 aspect ratio */
+    min-height: 100vh;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .video-background video {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .video-background::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 1;
+  }
+}
