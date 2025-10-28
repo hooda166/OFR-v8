@@ -13,12 +13,12 @@ const OurJourney = () => {
           </p>
           <div className="grid grid-cols-2 gap-4 mb-6">
             <img
-              src="/Assets/Strategic expansion-1 pexels.jpg"
+              src="/assets/Strategic expansion-1 pexels.jpg"
               alt="Strategic Expansion 1"
               className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
             />
             <img
-              src="/Assets/Strategic expansion-2 pexels.jpg"
+              src="/assets/Strategic expansion-2 pexels.jpg"
               alt="Infrastructure revolution 2"
               className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
             />
@@ -55,12 +55,12 @@ const OurJourney = () => {
           </p>
           <div className="grid grid-cols-2 gap-4 mb-6">
             <img
-              src="/Assets/Infrastructure revolution-1 pexels.jpg"
+              src="/assets/Infrastructure revolution-1 pexels.jpg"
               alt="Infrastructure revolution 1"
               className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
             />
             <img
-              src="/Assets/Infrastructure revolution-2 pexels.jpg"
+              src="/assets/Infrastructure revolution-2 pexels.jpg"
               alt="Infrastructure revolution 2"
               className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
             />
@@ -97,12 +97,12 @@ const OurJourney = () => {
           </p>
           <div className="grid grid-cols-2 gap-4 mb-6">
             <img
-              src="/Assets/Optical fibre revolution pexels.jpg"
+              src="/assets/Optical fibre revolution pexels.jpg"
               alt="Optical fibre revolution"
               className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
             />
             <img
-              src="/Assets/Optical fibre revolution-1 pexels.jpg"
+              src="/assets/Optical fibre revolution-1 pexels.jpg"
               alt="Optical fibre revolution 1"
               className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
             />
@@ -175,12 +175,12 @@ const OurJourney = () => {
         <div>
           <div className="grid grid-cols-2 gap-4 mb-6">
             <img
-              src="/Assets/Production launch-1 pexels.jpg"
+              src="/assets/Production launch-1 pexels.jpg"
               alt="Production launch 1"
               className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
             />
             <img
-              src="/Assets/Production Launch-2 pexels.jpg"
+              src="/assets/Production Launch-2 pexels.jpg"
               alt="Production launch 2"
               className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
             />
@@ -217,12 +217,12 @@ const OurJourney = () => {
           </p>
           <div className="grid grid-cols-2 gap-4 mb-6">
             <img
-              src="/Assets/Company Foundation-1 Unsplash.avif"
+              src="/assets/Company Foundation-1 Unsplash.avif"
               alt="Company Foundation"
               className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
             />
             <img
-              src="/Assets/Company foundation-2 Unsplash.jpg"
+              src="/assets/Company foundation-2 Unsplash.jpg"
               alt="Company Foundation 2"
               className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
             />
