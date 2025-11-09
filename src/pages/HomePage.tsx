@@ -21,7 +21,7 @@ const HomePage = () => {
       id: 'frp-products',
       title: 'FRP Products',
       // use EAA coated FRP image instead so it's a different product image from the section
-      image: '/Assets/EAA Coated FRP.avif',
+      image: '/assets/EAA Coated FRP.avif',
       description: 'Comprehensive fiber reinforced plastic solutions for cable reinforcement',
       icon: Cable,
       products: ['Uncoated Bare FRP', 'EAA Coated FRP', 'Water Blocking FRP', 'Thermal FRP']
@@ -29,7 +29,7 @@ const HomePage = () => {
     {
       id: 'frp-rodder',
       title: 'FRP Rodder & Tools',
-      image: '/Assets/FRP rodder.jpg',
+      image: '/assets/FRP rodder.jpg',
       description: 'Professional installation tools and rodders',
       icon: Wrench,
       products: ['Standard FRP Rodder', 'Heavy Duty Rodder']
@@ -38,7 +38,7 @@ const HomePage = () => {
       id: 'arp-products',
       title: 'ARP Products',
       // use Coated ARP image to be a different product image in the ARP section
-      image: '/Assets/Coated ARP.jpeg',
+      image: '/assets/Coated ARP.jpeg',
       description: 'Advanced aramid reinforced plastic solutions',
       icon: Shield,
       products: ['Uncoated ARP', 'Coated ARP']
@@ -46,7 +46,7 @@ const HomePage = () => {
     {
       id: 'cable-fillers',
       title: 'Cable Fillers',
-      image: '/Assets/HDPE Filler.jpg',
+      image: '/assets/HDPE Filler.jpg',
       description: 'Quality filling materials for cable construction',
       icon: Box,
       products: ['HDPE Fillers', 'LDPE Fillers']
@@ -54,7 +54,7 @@ const HomePage = () => {
     {
       id: 'optical-fiber-cables',
       title: 'Optical Fiber Cables',
-      image: '/Assets/armoured Optical fibre cable.jpg',
+      image: '/assets/armoured Optical fibre cable.jpg',
       description: 'Complete range of fiber optic cables',
       icon: Zap,
       products: ['Armoured Cables', 'ADSS Cables', 'Duct Cables', 'FTTH Cables']
@@ -62,7 +62,7 @@ const HomePage = () => {
     {
       id: 'passive-components',
       title: 'Passive Components',
-      image: '/Assets/Optical splitter.jpg',
+      image: '/assets/Optical splitter.jpg',
       description: 'Essential passive optical components',
       icon: Network,
       products: ['Optical Splitters', 'Couplers', 'WDM Devices', 'Attenuators', 'Pigtails', 'Connectors', 'Adapters']
@@ -70,7 +70,7 @@ const HomePage = () => {
     {
       id: 'connectivity-accessories',
       title: 'Connectivity & Accessories',
-      image: '/Assets/FIber Management systems.jpg',
+      image: '/assets/FIber Management systems.jpg',
       description: 'Complete connectivity and installation accessories',
       icon: Settings,
       products: ['FMS/FDMS', 'Patch Cords', 'Termination Boxes', 'Splice Closures']

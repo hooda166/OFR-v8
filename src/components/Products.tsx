@@ -34,7 +34,7 @@ const productCategories = [
         description: 'High-strength bare FRP rods for basic reinforcement applications',
         specs: ['Pure glass fiber construction', 'High tensile strength', 'Lightweight design', 'Cost-effective solution', 'Diameter range: 0.5mm to 25mm', 'Temperature resistance: -40°C to +85°C'],
         icon: Cable,
-  image: '/assets/Uncoated bare FRP.jpg'
+  image: '/assets/Uncoated-bare-FRP.jpg'
       },
       {
         name: 'Flat FRP',
