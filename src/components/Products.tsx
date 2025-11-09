@@ -20,49 +20,49 @@ const productCategories = [
               'High-Tensile strength'
           ],
           icon: Zap,
-          image: '/Assets/UV FRP.webp'
+          image: '/assets/UV FRP.webp'
       },
       {
         name: 'Thermal FRP',
         description: 'High quality smooth surface FRP with excellent mechanical and environmental properties',
         specs: ['Extreme environment applications', 'Smooth surface', 'Joint-free Long length FRP', 'High Tensile strength'],
         icon: Zap,
-  image: '/Assets/Thermal FRP.jpeg'
+  image: '/assets/Thermal FRP.jpeg'
       },
       {
         name: 'Uncoated Bare FRP',
         description: 'High-strength bare FRP rods for basic reinforcement applications',
         specs: ['Pure glass fiber construction', 'High tensile strength', 'Lightweight design', 'Cost-effective solution', 'Diameter range: 0.5mm to 25mm', 'Temperature resistance: -40°C to +85°C'],
         icon: Cable,
-  image: '/Assets/Uncoated bare FRP.jpg'
+  image: '/assets/Uncoated bare FRP.jpg'
       },
       {
         name: 'Flat FRP',
         description: 'High-strength bare FRP rods for basic reinforcement applications',
         specs: ['Pure glass fiber construction', 'High tensile strength', 'Lightweight design', 'Cost-effective solution', 'Diameter range: 0.5mm to 25mm', 'Temperature resistance: -40°C to +85°C'],
         icon: Cable,
-  image: '/Assets/Flat FRP.jpg'
+  image: '/assets/Flat FRP.jpg'
       },
       {
         name: 'EAA Coated FRP',
         description: 'Enhanced adhesion coating for superior bonding with cable materials',
         specs: ['EAA coating technology', 'Superior adhesion properties', 'Enhanced bonding strength', 'Improved cable performance', 'Coating thickness: 50-200 microns', 'Chemical resistance'],
         icon: Shield,
-  image: '/Assets/EAA Coated FRP.avif'
+  image: '/assets/EAA Coated FRP.avif'
       },
       {
         name: 'HDPE/LDPE/LSZH Coated FRP',
         description: 'Multi-layer coated FRP for enhanced protection and performance',
         specs: ['Multiple coating options', 'Chemical resistance', 'Fire retardant properties', 'Enhanced durability', 'UV stabilized', 'Moisture barrier protection'],
         icon: Layers,
-  image: '/Assets/HDPE FRP.png'
+  image: '/assets/HDPE FRP.png'
       },
       {
         name: 'Water Blocking FRP',
         description: 'Specialized FRP with water-blocking properties for moisture protection',
         specs: ['Water-blocking technology', 'Moisture protection', 'Swelling compounds', 'Long-term reliability', 'Gel formation capability', 'Submarine cable applications'],
         icon: Shield,
-  image: '/Assets/Water blocking FRP.webp'
+  image: '/assets/Water blocking FRP.webp'
       }
       
     ]
@@ -78,14 +78,14 @@ const productCategories = [
         description: 'High-quality FRP rodders for cable pulling and installation work',
         specs: ['Various lengths available', 'High flexibility', 'Excellent pushing force', 'Durable construction', 'Lengths: 50m to 500m', 'Diameter: 4mm to 16mm'],
         icon: Wrench,
-  image: '/Assets/FRP rodder.jpg'
+  image: '/assets/FRP rodder.jpg'
       },
       {
         name: 'Heavy Duty FRP Rodder',
         description: 'Industrial-grade rodders for demanding installation environments',
         specs: ['Enhanced strength', 'Extended length options', 'Superior durability', 'Professional grade', 'Load capacity: up to 2000N', 'Underground installation'],
         icon: Settings,
-  image: '/Assets/Heavy duty FRP rodder.webp'
+  image: '/assets/Heavy duty FRP rodder.webp'
       }
     ]
   },
@@ -100,14 +100,14 @@ const productCategories = [
         description: 'Pure aramid reinforced plastic rods with exceptional strength properties',
         specs: ['Aramid fiber construction', 'Ultra-high strength', 'Lightweight', 'Chemical resistance', 'Tensile strength: >3000 MPa', 'Military grade applications'],
         icon: Shield,
-  image: '/Assets/Uncoated ARP.webp'
+  image: '/assets/Uncoated ARP.webp'
       },
       {
         name: 'Coated ARP',
         description: 'Coated ARP with enhanced surface properties and protection',
         specs: ['Protective coating', 'Enhanced durability', 'Improved handling', 'Extended service life', 'Abrasion resistance', 'Aerospace applications'],
         icon: Layers,
-  image: '/Assets/Coated ARP.jpeg'
+  image: '/assets/Coated ARP.jpeg'
       }
     ]
   },
@@ -122,14 +122,14 @@ const productCategories = [
         description: 'High-density polyethylene fillers for cable void filling and structural support',
         specs: ['High-density polyethylene', 'Excellent chemical resistance', 'Structural support', 'Void filling', 'Density: 0.94-0.97 g/cm³', 'Temperature range: -40°C to +80°C'],
         icon: Box,
-  image: '/Assets/HDPE Filler.jpg'
+  image: '/assets/HDPE Filler.jpg'
       },
       {
         name: 'LDPE Fillers',
         description: 'Low-density polyethylene fillers for flexible cable applications',
         specs: ['Low-density polyethylene', 'Flexibility', 'Easy processing', 'Cost-effective', 'Density: 0.91-0.93 g/cm³', 'Excellent flexibility'],
         icon: Layers,
-  image: '/Assets/LDPE FIller.webp'
+  image: '/assets/LDPE FIller.webp'
       }
     ]
   },
@@ -144,28 +144,28 @@ const productCategories = [
         description: 'Heavy-duty armoured fiber optic cables for harsh environments and direct burial',
         specs: ['Steel armor protection', 'Rodent resistance', 'Crush protection', 'Direct burial capability', 'Fiber count: 2-288', 'Operating temperature: -40°C to +70°C'],
         icon: Shield,
-  image: '/Assets/armoured Optical fibre cable.jpg'
+  image: '/assets/armoured Optical fibre cable.jpg'
       },
       {
         name: 'ADSS Cables (All-Dielectric Self-Supporting)',
         description: 'Self-supporting aerial cables for power line installations without metallic components',
         specs: ['Self-supporting design', 'All-dielectric construction', 'Aerial installation', 'High span capability', 'Span length: up to 200m', 'Wind/ice loading resistance'],
         icon: Zap,
-  image: '/Assets/ADSS cable.jpg'
+  image: '/assets/ADSS cable.jpg'
       },
       {
         name: 'Duct Cables',
         description: 'Specialized cables designed for underground duct and conduit installations',
         specs: ['Duct installation optimized', 'Compact design', 'Easy pulling', 'High fiber count options', 'Fiber count: 2-144', 'Low friction jacket'],
         icon: Cable,
-  image: '/Assets/Duct cable.webp'
+  image: '/assets/Duct cable.webp'
       },
       {
         name: 'FTTH Cables (Fiber-to-the-Home)',
         description: 'Drop cables for residential and commercial last-mile connectivity',
         specs: ['Drop cable design', 'Bend-insensitive fibers', 'Easy termination', 'Indoor/outdoor rated', 'Fiber count: 1-12', 'Bend radius: 10mm'],
         icon: Network,
-  image: '/Assets/FTTH cable.jpg'
+  image: '/assets/FTTH cable.jpg'
       }
     ]
   },
@@ -180,21 +180,21 @@ const productCategories = [
         description: 'Planar Lightwave Circuit splitters for signal distribution in PON networks',
         specs: ['PLC technology', 'Multiple split ratios (1:2 to 1:64)', 'Low insertion loss', 'High reliability', 'Insertion loss: <4.3dB', 'Operating wavelength: 1260-1650nm'],
         icon: Network,
-  image: '/Assets/Optical splitter.jpg'
+  image: '/assets/Optical splitter.jpg'
       },
       {
         name: 'Optical Couplers',
         description: 'Fused fiber couplers for signal combining and splitting applications',
         specs: ['Fused biconical taper', 'Low excess loss', 'High directivity', 'Environmental stability', 'Coupling ratio: 10:90 to 50:50', 'Directivity: >55dB'],
         icon: Zap,
-  image: '/Assets/optical couplers.jpg'
+  image: '/assets/optical couplers.jpg'
       },
       {
         name: 'Wavelength Division Multiplexers (WDM)',
         description: 'WDM devices for combining multiple wavelengths on single fiber',
         specs: ['CWDM/DWDM options', 'Low insertion loss', 'High isolation', 'Compact design', 'Channel spacing: 0.8nm-20nm', 'Isolation: >30dB'],
         icon: Settings,
-  image: '/Assets/WDM.avif'
+  image: '/assets/WDM.avif'
       }
     ]
   },
@@ -209,21 +209,21 @@ const productCategories = [
         description: 'Rack-mounted fiber management and distribution systems',
         specs: ['19-inch rack mounting', 'High density design', 'Cable management', 'Easy access', 'Port density: up to 144 ports', 'Modular design'],
         icon: Settings,
-  image: '/Assets/FIber Management systems.jpg'
+  image: '/assets/FIber Management systems.jpg'
       },
       {
         name: 'Fiber Distribution Management Systems (FDMS)',
         description: 'Wall-mounted fiber distribution and management solutions',
         specs: ['Wall mounting', 'Compact design', 'Splice management', 'Port flexibility', 'Port count: 8-48 ports', 'IP65 rated enclosure'],
         icon: Box,
-  image: '/Assets/FIbre Distribution systems.webp'
+  image: '/assets/FIbre Distribution systems.webp'
       },
       {
         name: 'Patch Cords',
         description: 'Pre-terminated patch cables for equipment connections',
         specs: ['Factory terminated both ends', 'Low insertion loss', 'Various lengths', 'Multiple connector types', 'Insertion loss: <0.3dB', 'Return loss: >50dB'],
         icon: Cable,
-  image: '/Assets/Patch cords.jpg'
+  image: '/assets/Patch cords.jpg'
       }
     ]
   }

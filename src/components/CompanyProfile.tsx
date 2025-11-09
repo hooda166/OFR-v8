@@ -146,7 +146,7 @@ const CompanyProfile = () => {
               {/* Image Section - Left Side */}
               <div className="lg:w-[45%] h-64 lg:h-full">
                 <img
-                  src="/Assets/Organizational strengths - Google.jpg"
+                  src="/assets/Organizational strengths-google.jpg"
                   alt="Organizational strengths"
                   className="w-full h-full object-cover object-center rounded-none"
                   loading="lazy"
