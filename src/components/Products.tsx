@@ -100,7 +100,7 @@ const productCategories = [
         description: 'Pure aramid reinforced plastic rods with exceptional strength properties',
         specs: ['Aramid fiber construction', 'Ultra-high strength', 'Lightweight', 'Chemical resistance', 'Tensile strength: >3000 MPa', 'Military grade applications'],
         icon: Shield,
-  image: '/assets/Uncoated ARP.jpeg'
+  image: 'public/assets/uncoated-arp.jpeg'
       },
       {
         name: 'Coated ARP',
