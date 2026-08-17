@@ -1,0 +1,14 @@
+<svg viewBox="0 0 400 460" xmlns="http://www.w3.org/2000/svg" font-family="Arial, sans-serif">
+  <text x="200" y="30" text-anchor="middle" font-size="20" font-weight="bold" fill="#111827">FLAT INDOOR OUTDOOR DROP</text>
+  
+  <path d="M 90 190 L 210 190 L 240 250 L 210 310 L 90 310 L 120 250 Z" fill="#111827"/>
+  <circle cx="130" cy="250" r="26" fill="#ffffff" stroke="#374151" stroke-width="2"/>
+  <circle cx="195" cy="250" r="26" fill="#ffffff" stroke="#374151" stroke-width="2"/>
+  <circle cx="160" cy="240" r="7" fill="#1e3a8a"/>
+  <circle cx="160" cy="262" r="7" fill="#ea580c"/>
+  
+  
+  <circle cx="300" cy="250" r="55" fill="#111827"/>
+  <circle cx="300" cy="250" r="42" fill="#d1d5db"/>
+  
+</svg>

@@ -139,7 +139,7 @@ const HomePage = () => {
           </h1>
           
           <p className="text-xl md:text-2xl text-gray-100 mb-12 max-w-4xl mx-auto leading-relaxed drop-shadow-md">
-            Leading manufacturer of fiber optic solutions, delivering innovation and quality 
+            Leading manufacturer of FRP rods and fiber optic solutions, delivering innovation and quality 
             across the interconnected global network
           </p>
           

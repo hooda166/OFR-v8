@@ -67,18 +67,18 @@ const Navbar = () => {
                 id: 'frp-products'
               },
               {
-                name: 'FRP Rodder & Tools',
-                href: '/products#frp-rodder',
-                description: 'Professional installation tools',
-                icon: Wrench,
-                id: 'frp-rodder'
-              },
-              {
                 name: 'ARP Products',
                 href: '/products#arp-products',
                 description: 'Aramid reinforced plastic solutions',
                 icon: Shield,
                 id: 'arp-products'
+              },
+              {
+                name: 'FRP Rodder & Tools',
+                href: '/products#frp-rodder',
+                description: 'Professional installation tools',
+                icon: Wrench,
+                id: 'frp-rodder'
               }
             ]
           },
@@ -117,6 +117,13 @@ const Navbar = () => {
                 description: 'FMS, patch cords, termination solutions',
                 icon: Settings,
                 id: 'connectivity-accessories'
+              },
+              {
+                name: 'FTTH Termination & Distribution',
+                href: '/products#ftth-products',
+                description: 'Termination boxes and LIU enclosures',
+                icon: Box,
+                id: 'ftth-products'
               }
             ]
           }

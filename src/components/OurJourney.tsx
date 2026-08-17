@@ -1,6 +1,6 @@
 import React from 'react';
 import { Timeline } from './ui/timeline';
-import { Building, Award, Globe, Zap, Users, Target, Factory, Network } from 'lucide-react';
+import { Building, Award, Globe, Zap, Users, Target, Factory, Network, FileText } from 'lucide-react';
 
 const OurJourney = () => {
   const journeyData = [
@@ -11,6 +11,8 @@ const OurJourney = () => {
           <p className="text-gray-600 text-xs md:text-sm font-normal mb-8">
             Marking a transformative year with strategic acquisitions and breakthrough innovations, OFR Telecom expanded its technological capabilities and market presence through advanced UV FRP production and strategic partnerships.
           </p>
+          {/* TODO(needs real photo): requested "UV machine pictures to be put" — replace
+              these two stock photos with real photos of the UV FRP machine when supplied. */}
           <div className="grid grid-cols-2 gap-4 mb-6">
             <img
               src="/assets/Strategic expansion-1-pexels.jpg"
@@ -53,6 +55,8 @@ const OurJourney = () => {
           <p className="text-gray-600 text-xs md:text-sm font-normal mb-8">
             A landmark year marked by unprecedented infrastructure expansion with the commissioning of our state-of-the-art integrated manufacturing facility, revolutionizing our production capabilities and operational efficiency.
           </p>
+          {/* TODO(needs real photo): requested "New factory picture to be put" — replace
+              these two stock photos with real photos of the new factory when supplied. */}
           <div className="grid grid-cols-2 gap-4 mb-6">
             <img
               src="/assets/Infrastructure revolution-1-pexels.jpg"
@@ -96,14 +100,16 @@ const OurJourney = () => {
             A pivotal milestone in our technological evolution with the successful launch of optical fiber cable production, marking our entry into complete end-to-end fiber optic solutions and establishing OFR Telecom as a comprehensive telecommunications infrastructure provider.
           </p>
           <div className="grid grid-cols-2 gap-4 mb-6">
+            {/* Updated per request ("cable picture or drums to be put") with real cable/drum
+                photos from the images/spec pack, replacing the generic stock photos. */}
             <img
-              src="/assets/Optical fibre revolution pexels.jpg"
-              alt="Optical fibre revolution"
+              src="/assets/EAA Coated FRP.avif"
+              alt="Cable on drum"
               className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
             />
             <img
-              src="/assets/Optical fibre revolution-1 pexels.jpg"
-              alt="Optical fibre revolution 1"
+              src="/assets/Armoured Cable (RAR).jpg"
+              alt="Optical fibre cable"
               className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
             />
           </div>
@@ -134,6 +140,8 @@ const OurJourney = () => {
       title: "2020",
       content: (
         <div>
+          {/* TODO(needs real photo): requested "Second factory picture to be put" — replace
+              these two stock photos with real photos of the second factory when supplied. */}
           <div className="grid grid-cols-2 gap-4 mb-6">
             <img
               src="/assets/Capacity-expansion-2-pexels.jpg"
@@ -173,6 +181,8 @@ const OurJourney = () => {
       title: "2016",
       content: (
         <div>
+          {/* TODO(needs real photo): requested "First factory picture to be put" — replace
+              these two stock photos with real photos of the first factory when supplied. */}
           <div className="grid grid-cols-2 gap-4 mb-6">
             <img
               src="/assets/Production launch-1 pexels.jpg"
@@ -227,6 +237,20 @@ const OurJourney = () => {
               className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
             />
           </div>
+
+          {/* Requested: "Certificate of incorporation shall be put in small picture".
+              TODO(needs real photo): no scan was supplied yet. Once you have one, drop it
+              in public/assets/ and swap this placeholder <div> for:
+              <img src="/assets/Certificate of Incorporation.jpg" alt="Certificate of Incorporation" className="rounded-lg object-cover h-40 w-32 shadow-md" /> */}
+          <div className="mb-8">
+            <div className="inline-flex items-center gap-3 border-2 border-dashed border-gray-300 rounded-lg px-4 py-3 w-40">
+              <FileText className="h-8 w-8 text-blue-600 flex-shrink-0" />
+              <span className="text-xs text-gray-500 leading-snug">
+                Certificate of Incorporation
+              </span>
+            </div>
+          </div>
+
           <div className="mb-8">
             <h4 className="text-lg font-semibold text-gray-900 mb-4 flex items-center">
               <Award className="h-5 w-5 text-blue-600 mr-2" />

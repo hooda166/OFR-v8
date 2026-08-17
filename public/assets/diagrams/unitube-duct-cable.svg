@@ -1,0 +1,14 @@
+<svg viewBox="0 0 400 460" xmlns="http://www.w3.org/2000/svg" font-family="Arial, sans-serif">
+  <text x="200" y="30" text-anchor="middle" font-size="22" font-weight="bold" fill="#111827">UNITUBE DUCT CABLE</text>
+  <circle cx="200" cy="250" r="130" fill="#111827"/><circle cx="200" cy="250" r="118" fill="#bfe3f5"/><circle cx="200" cy="250" r="104" fill="#f1e6b8"/><circle cx="200" cy="250" r="90" fill="#dbeafe" stroke="#3b82f6" stroke-width="3"/><circle cx="200" cy="118" r="4" fill="#e5e7eb" stroke="#374151"/><circle cx="200" cy="382" r="4" fill="#e5e7eb" stroke="#374151"/><line x1="110" y1="250" x2="70" y2="272" stroke="#3b82f6" stroke-width="2"/>
+  <circle cx="222.8" cy="259.6" r="4.2" fill="#1e3a8a"/>
+    <circle cx="219.2" cy="281.8" r="4.2" fill="#ea580c"/>
+    <circle cx="195.8" cy="299.3" r="4.2" fill="#15803d"/>
+    <circle cx="179.7" cy="273.4" r="4.2" fill="#7c2d12"/>
+    <circle cx="157.8" cy="259.8" r="4.2" fill="#6b7280"/>
+    <circle cx="177.2" cy="240.4" r="4.2" fill="#111827"/>
+    <circle cx="180.8" cy="218.2" r="4.2" fill="#dc2626"/>
+    <circle cx="204.2" cy="200.7" r="4.2" fill="#eab308"/>
+    <circle cx="220.3" cy="226.6" r="4.2" fill="#7c3aed"/>
+    <circle cx="242.2" cy="240.2" r="4.2" fill="#ec4899"/>
+</svg>

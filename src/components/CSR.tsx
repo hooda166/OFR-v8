@@ -1,5 +1,5 @@
 import React from 'react';
-import { Leaf, Heart, Scale, Activity as Diversity, Gift, Target, Factory } from 'lucide-react';
+import { Leaf, Scale, Activity as Diversity, Gift, Target, Factory } from 'lucide-react';
 
 interface Initiative {
   title: string;
@@ -90,22 +90,6 @@ const csrInitiatives: CSRInitiative[] = [
           'Skill enhancement workshops',
           'Mentorship programs',
           'Career advancement paths'
-        ]
-      }
-    ]
-  },
-{
-    category: 'Community Engagement',
-    icon: Heart,
-    initiatives: [
-      {
-        title: 'Digital Literacy Program',
-        description: 'Education initiative in underserved areas',
-        impact: '10,000+ beneficiaries',
-        details: [
-          'Literacy program partnerships with Rotary Club',
-          'Free education for underprivileged children',
-          'Local NGOs alignment'
         ]
       }
     ]

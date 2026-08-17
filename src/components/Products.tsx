@@ -30,13 +30,6 @@ const productCategories = [
   image: '/assets/Thermal FRP.jpeg'
       },
       {
-        name: 'Uncoated Bare FRP',
-        description: 'High-strength bare FRP rods for basic reinforcement applications',
-        specs: ['Pure glass fiber construction', 'High tensile strength', 'Lightweight design', 'Cost-effective solution', 'Diameter range: 0.5mm to 25mm', 'Temperature resistance: -40°C to +85°C'],
-        icon: Cable,
-  image: '/assets/Uncoated-bare-FRP.jpg'
-      },
-      {
         name: 'Flat FRP',
         description: 'High-strength bare FRP rods for basic reinforcement applications',
         specs: ['Pure glass fiber construction', 'High tensile strength', 'Lightweight design', 'Cost-effective solution', 'Diameter range: 0.5mm to 25mm', 'Temperature resistance: -40°C to +85°C'],
@@ -63,8 +56,48 @@ const productCategories = [
         specs: ['Water-blocking technology', 'Moisture protection', 'Swelling compounds', 'Long-term reliability', 'Gel formation capability', 'Submarine cable applications'],
         icon: Shield,
   image: '/assets/Water blocking FRP.webp'
+      },
+      {
+        // Placeholder photo (reused from the retired Uncoated Bare FRP listing) —
+        // swap in a real product photo of the steel-wire composite rod when available.
+        name: 'FRP with Steel Wire',
+        description: 'Composite FRP rod with a steel wire core for applications needing extra tensile and crush strength',
+        specs: ['FRP + steel wire composite core', 'Higher tensile strength than standard FRP', 'Enhanced crush resistance', 'Suited to armoured/aerial cable designs'],
+        icon: Cable,
+  image: '/assets/Uncoated-bare-FRP.jpg'
+      },
+      {
+        // Placeholder photo (reused from the retired Uncoated Bare FRP listing) —
+        // swap in a real product photo of the copper-wire composite rod when available.
+        name: 'FRP with Copper Wire',
+        description: 'Composite FRP rod with an integrated copper wire, used where cables also need to carry power or signalling',
+        specs: ['FRP + copper wire composite core', 'Combined strength member and conductor', 'Suited to hybrid opto-electrical cables', 'Cost-effective solution'],
+        icon: Cable,
+  image: '/assets/Uncoated-bare-FRP.jpg'
       }
-      
+    ]
+  },
+  {
+    id: 'arp-products',
+    title: 'ARP (Aramid Reinforced Plastic)',
+    icon: Shield,
+    description: 'Advanced aramid reinforced plastic solutions for superior strength and performance',
+    products: [
+      {
+        name: 'Uncoated ARP',
+        description: 'Pure aramid reinforced plastic rods with exceptional strength properties',
+        specs: ['Aramid fiber construction', 'Ultra-high strength', 'Lightweight', 'Chemical resistance', 'Tensile strength: >3000 MPa', 'Military grade applications'],
+        icon: Shield,
+        // Updated per request: reuse the real EAA Coated FRP drum/reel photo for both ARP entries.
+  image: '/assets/EAA Coated FRP.avif'
+      },
+      {
+        name: 'Coated ARP',
+        description: 'Coated ARP with enhanced surface properties and protection',
+        specs: ['Protective coating', 'Enhanced durability', 'Improved handling', 'Extended service life', 'Abrasion resistance', 'Aerospace applications'],
+        icon: Layers,
+  image: '/assets/EAA Coated FRP.avif'
+      }
     ]
   },
   {
@@ -86,28 +119,6 @@ const productCategories = [
         specs: ['Enhanced strength', 'Extended length options', 'Superior durability', 'Professional grade', 'Load capacity: up to 2000N', 'Underground installation'],
         icon: Settings,
   image: '/assets/Heavy duty FRP rodder.webp'
-      }
-    ]
-  },
-  {
-    id: 'arp-products',
-    title: 'ARP (Aramid Reinforced Plastic)',
-    icon: Shield,
-    description: 'Advanced aramid reinforced plastic solutions for superior strength and performance',
-    products: [
-      {
-        name: 'Uncoated ARP',
-        description: 'Pure aramid reinforced plastic rods with exceptional strength properties',
-        specs: ['Aramid fiber construction', 'Ultra-high strength', 'Lightweight', 'Chemical resistance', 'Tensile strength: >3000 MPa', 'Military grade applications'],
-        icon: Shield,
-  image: '/assets/uncoated-arp.jpeg'
-      },
-      {
-        name: 'Coated ARP',
-        description: 'Coated ARP with enhanced surface properties and protection',
-        specs: ['Protective coating', 'Enhanced durability', 'Improved handling', 'Extended service life', 'Abrasion resistance', 'Aerospace applications'],
-        icon: Layers,
-  image: '/assets/Coated ARP.jpeg'
       }
     ]
   },
@@ -144,14 +155,16 @@ const productCategories = [
         description: 'Heavy-duty armoured fiber optic cables for harsh environments and direct burial',
         specs: ['Steel armor protection', 'Rodent resistance', 'Crush protection', 'Direct burial capability', 'Fiber count: 2-288', 'Operating temperature: -40°C to +70°C'],
         icon: Shield,
-  image: '/assets/armoured Optical fibre cable.jpg'
+        // Updated with a real OFR product photo supplied via the images/spec pack.
+  image: '/assets/Armoured Cable (RAR).jpg'
       },
       {
         name: 'ADSS Cables (All-Dielectric Self-Supporting)',
         description: 'Self-supporting aerial cables for power line installations without metallic components',
         specs: ['Self-supporting design', 'All-dielectric construction', 'Aerial installation', 'High span capability', 'Span length: up to 200m', 'Wind/ice loading resistance'],
         icon: Zap,
-  image: '/assets/ADSS cable.jpg'
+        // Updated with a real OFR aerial self-supporting cable photo supplied via the images/spec pack.
+  image: '/assets/ADSS Cable (RAR).jpg'
       },
       {
         name: 'Duct Cables',
@@ -166,6 +179,22 @@ const productCategories = [
         specs: ['Drop cable design', 'Bend-insensitive fibers', 'Easy termination', 'Indoor/outdoor rated', 'Fiber count: 1-12', 'Bend radius: 10mm'],
         icon: Network,
   image: '/assets/FTTH cable.jpg'
+      },
+      {
+        // New product added from the images/spec pack (real datasheet: PART No. FO-4/SM/(2K)-MFZ-W 3.1).
+        name: 'FTTH Flat Cables',
+        description: 'Compact flat drop cable with an FRP-rod strength member, built for easy indoor routing and termination',
+        specs: ['FRP rod (0.5mm x2, EAA coated) strength member', 'Fibre type: SM G657 A1', 'Dimensions: 3.1mm x 2.0mm', 'Fibre count: 1F-2F', 'LSZH outer sheath', 'Min. bend radius: 40mm'],
+        icon: Network,
+  image: '/assets/FTTH Flat Cable.jpg'
+      },
+      {
+        // New product added from the images/spec pack (real datasheet: PART No. A-2,4,6&12/SM/UT(2F&G)-MFP-B 5.8).
+        name: 'Unitube Cables',
+        description: 'Single loose-tube fibre optic cable with FRP rod strength members, for aerial and duct installation',
+        specs: ['FRP rod (0.8mm x2) + glass yarn strength member', 'Fibre type: SM G652 D', 'Fibre count: 2F/4F/6F/12F', 'Outer diameter: 5.8mm', 'HDPE outer sheath', 'Standard length: 1-2km per drum'],
+        icon: Cable,
+  image: '/assets/Unitube Cable.png'
       }
     ]
   },
@@ -180,7 +209,8 @@ const productCategories = [
         description: 'Planar Lightwave Circuit splitters for signal distribution in PON networks',
         specs: ['PLC technology', 'Multiple split ratios (1:2 to 1:64)', 'Low insertion loss', 'High reliability', 'Insertion loss: <4.3dB', 'Operating wavelength: 1260-1650nm'],
         icon: Network,
-  image: '/assets/Optical splitter.jpg'
+        // Updated with a real product photo (1x16 PLC splitter) supplied via the images/spec pack.
+  image: '/assets/Optical Splitter (RAR).jpg'
       },
       {
         name: 'Optical Couplers',
@@ -223,7 +253,46 @@ const productCategories = [
         description: 'Pre-terminated patch cables for equipment connections',
         specs: ['Factory terminated both ends', 'Low insertion loss', 'Various lengths', 'Multiple connector types', 'Insertion loss: <0.3dB', 'Return loss: >50dB'],
         icon: Cable,
-  image: '/assets/Patch cords.jpg'
+        // Updated with a real, factory-tested patch cord photo supplied via the images/spec pack.
+  image: '/assets/Patch Cord (RAR).jpg'
+      }
+    ]
+  },
+  {
+    // New category added from the images/spec pack (FTTH Products folder): termination
+    // boxes and LIU (Line Interconnection Unit) enclosures for FTTH last-mile deployments.
+    id: 'ftth-products',
+    title: 'FTTH Termination & Distribution',
+    icon: Box,
+    description: 'Termination boxes and LIU enclosures for last-mile FTTH splicing, storage and distribution',
+    products: [
+      {
+        name: 'FTTH Termination Box',
+        description: 'Compact wall-mount termination box for indoor fibre drop cable termination and splice storage',
+        specs: ['Wall/pole mountable', 'Splice tray + slack storage', 'Compact indoor enclosure', 'Cable gland entries'],
+        icon: Box,
+        image: '/assets/FTTH Termination Box.jpg'
+      },
+      {
+        name: 'LIU – Fixed',
+        description: 'Rack-mounted fixed Line Interconnection Unit for fibre patching and splice management',
+        specs: ['19-inch rack mount', 'Fixed drawer design', 'SC/LC adapter panel options', 'Splice tray storage'],
+        icon: Settings,
+        image: '/assets/LIU Fixed.jpg'
+      },
+      {
+        name: 'LIU – Sliding',
+        description: 'Rack-mounted sliding-drawer Line Interconnection Unit for easier splice access and maintenance',
+        specs: ['19-inch rack mount', 'Sliding drawer for front access', 'High port density', 'Splice tray storage'],
+        icon: Settings,
+        image: '/assets/LIU Sliding.jpg'
+      },
+      {
+        name: 'LIU – Wall Mount',
+        description: 'Wall-mounted Line Interconnection Unit for distribution points outside the equipment rack',
+        specs: ['Wall-mount metal enclosure', 'Lockable hinged door', 'Splice tray + adapter panel', 'Indoor/outdoor rated options'],
+        icon: Box,
+        image: '/assets/LIU Wall Mount.jpg'
       }
     ]
   }
