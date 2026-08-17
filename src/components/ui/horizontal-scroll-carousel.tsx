@@ -231,8 +231,11 @@ const ProductCard: React.FC<{ product: ProductCard }> = ({ product }) => {
               'Coated ARP',
               'ADSS Cables (All-Dielectric Self-Supporting)',
               'Duct Cables',
-              'Optical Splitters (PLC)',
-              'Fiber Management Systems (FMS)'
+              // Renamed from 'Optical Splitters (PLC)' / 'Fiber Management Systems (FMS)'
+              // when Passive Components was trimmed to 4 products — kept here so the same
+              // images still render with 'object-contain' instead of being cropped.
+              'PLC Splitters',
+              'FMS/LIU'
             ].includes(product.name) ? 'object-contain' : 'object-cover'} object-center group-hover:scale-105 transition-transform duration-500`}
             alt={product.name}
             loading="lazy"

@@ -301,54 +301,90 @@ const productCategories = [
     id: 'passive-components',
     title: 'Passive Components',
     icon: Network,
-    description: 'Essential passive optical components and connectivity accessories for fiber optic network infrastructure',
+    // Description updated: FTTH Termination & Distribution (LIU enclosures) was retired as
+    // its own section and folded in here per request — see 'FMS/LIU' product below and the
+    // commented-out 'ftth-products' category further down for the original section.
+    description: 'Essential passive optical components, connectivity accessories and LIU/FTTH distribution hardware for fiber optic network infrastructure',
     products: [
+      // ==================================================================
+      // ACTIVE PRODUCTS — per request, only these 4 render under Passive
+      // Components, in this order: FMS/LIU, Patch Cords, PLC Splitters,
+      // Optical Coupler. 'FMS/LIU' absorbs the retired standalone LIU
+      // products (see the commented-out 'ftth-products' category below).
+      // ==================================================================
       {
-        name: 'Optical Splitters (PLC)',
+        // Renamed from 'Fiber Management Systems (FMS)'; now also represents the retired
+        // standalone LIU (Line Interconnection Unit) products merged in from the old
+        // 'FTTH Termination & Distribution' category per request.
+        name: 'FMS/LIU',
+        description: 'Rack-mounted fiber management, distribution and Line Interconnection Unit (LIU) systems',
+        specs: ['Fixed/Sliding/Wall-mount variants available', '19-inch rack mounting', 'High density design', 'Cable management', 'Port density: up to 144 ports', 'Modular design'],
+        icon: Settings,
+        image: '/assets/FIber Management systems.jpg'
+      },
+      {
+        name: 'Patch Cords',
+        description: 'Pre-terminated patch cables for equipment connections',
+        specs: ['Low insertion loss', 'Various lengths', 'Multiple connector types'],
+        icon: Cable,
+        // Updated with a real, factory-tested patch cord photo supplied via the images/spec pack.
+        image: '/assets/Patch Cord (RAR).jpg'
+      },
+      {
+        // Renamed from 'Optical Splitters (PLC)' per request.
+        name: 'PLC Splitters',
         description: 'Planar Lightwave Circuit splitters for signal distribution in PON networks',
         specs: ['PLC technology', 'Multiple split ratios (1:2 to 1:64)', 'Low insertion loss', 'High reliability', 'Insertion loss: <4.3dB', 'Operating wavelength: 1260-1650nm'],
         icon: Network,
         // Updated with a real product photo (1x16 PLC splitter) supplied via the images/spec pack.
-  image: '/assets/Optical Splitter (RAR).jpg'
+        image: '/assets/Optical Splitter (RAR).jpg'
       },
       {
-        name: 'Optical Couplers',
+        // Renamed from 'Optical Couplers' (singular per request).
+        name: 'Optical Coupler',
         description: 'Fused fiber couplers for signal combining and splitting applications',
         specs: ['Fused biconical taper', 'Low excess loss', 'High directivity', 'Environmental stability', 'Coupling ratio: 10:90 to 50:50', 'Directivity: >55dB'],
         icon: Zap,
-  image: '/assets/optical couplers.jpg'
-      },
-      {
+        image: '/assets/optical couplers.jpg'
+      }
+
+      // ==================================================================
+      // RETIRED PASSIVE-COMPONENT PRODUCTS — commented out, NOT deleted,
+      // per request ("remove any other products that are not listed").
+      // Uncomment an entry below (and re-add a trailing comma to the
+      // preceding active product) to bring it back.
+      // ==================================================================
+      /*
+      ,{
         name: 'Wavelength Division Multiplexers (WDM)',
         description: 'WDM devices for combining multiple wavelengths on single fiber',
         specs: ['CWDM/DWDM options', 'Low insertion loss', 'High isolation', 'Compact design', 'Channel spacing: 0.8nm-20nm', 'Isolation: >30dB'],
         icon: Settings,
-  image: '/assets/WDM.avif'
-      },
-      {
-        name: 'Fiber Management Systems (FMS)',
-        description: 'Rack-mounted fiber management and distribution systems',
-        specs: ['19-inch rack mounting', 'High density design', 'Cable management', 'Easy access', 'Port density: up to 144 ports', 'Modular design'],
-        icon: Settings,
-  image: '/assets/FIber Management systems.jpg'
+        image: '/assets/WDM.avif'
       },
       {
         name: 'Fiber Distribution Management Systems (FDMS)',
         description: 'Wall-mounted fiber distribution and management solutions',
         specs: ['Wall mounting', 'Compact design', 'Splice management', 'Port flexibility', 'Port count: 8-48 ports', 'IP65 rated enclosure'],
         icon: Box,
-  image: '/assets/FIbre Distribution systems.webp'
-      },
-      {
-        name: 'Patch Cords',
-        description: 'Pre-terminated patch cables for equipment connections',
-        specs: ['Factory terminated both ends', 'Low insertion loss', 'Various lengths', 'Multiple connector types', 'Insertion loss: <0.3dB', 'Return loss: >50dB'],
-        icon: Cable,
-        // Updated with a real, factory-tested patch cord photo supplied via the images/spec pack.
-  image: '/assets/Patch Cord (RAR).jpg'
+        image: '/assets/FIbre Distribution systems.webp'
       }
+      */
     ]
   },
+
+  // ====================================================================
+  // RETIRED CATEGORY — "FTTH Termination & Distribution" section.
+  // Commented out, NOT deleted, per request: "move the FTTH termination
+  // and distribution section, merge the mentioned things in above [the
+  // Passive Components] one." Its LIU concept now lives inside the
+  // 'passive-components' category above as the 'FMS/LIU' product; the
+  // standalone LIU Fixed/Sliding/Wall Mount and FTTH Termination Box
+  // product entries below did not make the final 4-product list for
+  // Passive Components, so they're retired here rather than re-added
+  // individually. Its matching Navbar.tsx entry is commented out too.
+  // ====================================================================
+  /*
   {
     // New category added from the images/spec pack (FTTH Products folder): termination
     // boxes and LIU (Line Interconnection Unit) enclosures for FTTH last-mile deployments.
@@ -387,6 +423,7 @@ const productCategories = [
       }
     ]
   }
+  */
 ];
 
 // ProductModal intentionally removed — not used by current components

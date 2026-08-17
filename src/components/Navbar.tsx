@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
+// NOTE: 'Box' is currently unused — its only uses ('Cable Fillers' and 'FTTH Termination &
+// Distribution' nav entries) now live inside commented-out blocks below. Left in this
+// import (not deleted) so those sections can be restored by uncommenting alone.
 import { Menu, X, Globe, Phone, ChevronDown, Cable, Box, Zap, Wrench, Layers, Shield, Network } from 'lucide-react';
 import { useScrollSpy } from '../hooks/useScrollSpy';
 import { useScrollBehavior } from '../hooks/useScrollBehavior';
@@ -119,17 +122,28 @@ const Navbar = () => {
               {
                 name: 'Passive Components',
                 href: '/products#passive-components',
-                description: 'Splitters, couplers, WDM, FMS, patch cords',
+                // Updated per request: WDM/FDMS were dropped, and FTTH's LIU enclosures were
+                // merged in as 'FMS/LIU' — see the commented-out 'FTTH Termination &
+                // Distribution' entry below.
+                description: 'FMS/LIU, patch cords, PLC splitters, optical coupler',
                 icon: Network,
                 id: 'passive-components'
-              },
-              {
+              }
+              // RETIRED — commented out, NOT deleted, per request: "move the FTTH
+              // termination and distribution section, merge the mentioned things in [the
+              // Passive Components section] above." Its LIU concept now lives in the
+              // 'FMS/LIU' Passive Components entry above; the standalone products didn't
+              // make the final 4-product list, so this whole category (and matching block
+              // in Products.tsx) is retired. Uncomment both to restore.
+              /*
+              ,{
                 name: 'FTTH Termination & Distribution',
                 href: '/products#ftth-products',
                 description: 'Termination boxes and LIU enclosures',
                 icon: Box,
                 id: 'ftth-products'
               }
+              */
             ]
           }
         ]

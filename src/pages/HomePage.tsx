@@ -54,12 +54,15 @@ const HomePage = () => {
       products: ['Armoured Cables', 'ADSS Cables', 'Duct Cables', 'FTTH Cables']
     },
     {
+      // Product list trimmed & renamed to match the 4 active products in Products.tsx
+      // (FMS/LIU absorbs the retired standalone LIU/FTTH Termination products; WDM and
+      // FDMS were dropped per request).
       id: 'passive-components',
       title: 'Passive Components',
       image: '/assets/Optical splitter.jpg',
-      description: 'Essential passive optical components and connectivity accessories',
+      description: 'Essential passive optical components, connectivity and LIU distribution hardware',
       icon: Network,
-      products: ['Optical Splitters (PLC)', 'Optical Couplers', 'WDM Devices', 'Fiber Management Systems (FMS)', 'Fiber Distribution Management Systems (FDMS)', 'Patch Cords']
+      products: ['FMS/LIU', 'Patch Cords', 'PLC Splitters', 'Optical Coupler']
     }
   ];
 

@@ -4,7 +4,8 @@ import { MapPin, Globe, TrendingUp, Users, Building, Handshake } from 'lucide-re
 const regions = [
   {
     name: 'Asia',
-    countries: ['China', 'India', 'Japan', 'South Korea'],
+    // Country list updated per reference doc "Worldwide Shipments" slide.
+    countries: ['Bangladesh', 'Vietnam', 'Turkey', 'Indonesia', 'Malaysia', 'Thailand'],
     description: 'Strong presence in major Asian markets with manufacturing facilities and distribution networks.',
     image: 'https://images.unsplash.com/photo-1543160058-bb08f2f22c21?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     stats: {
@@ -14,6 +15,8 @@ const regions = [
     }
   },
   {
+  // Not covered by the reference "Worldwide Shipments" doc (Asia/Africa/Europe/CIS/
+  // USA/South America) — left as-is.
   name: 'Middle East',
   countries: ['UAE', 'Saudi Arabia', 'Qatar', 'Oman'],
   description: 'Established partnerships and projects across the Middle East region.',
@@ -26,7 +29,8 @@ const regions = [
 },
   {
     name: 'Europe',
-    countries: ['Germany', 'France', 'UK', 'Italy'],
+    // Country list updated per reference doc "Worldwide Shipments" slide.
+    countries: ['Germany', 'Austria', 'Greece', 'Poland', 'Spain', 'Portugal', 'Sweden', 'Belgium', 'Italy'],
     description: 'Growing European presence with focus on technological innovation and quality.',
     image: 'https://images.unsplash.com/photo-1467269204594-9661b134dd2b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
     stats: {
@@ -37,7 +41,9 @@ const regions = [
   },
   {
     name: 'Africa',
-    countries: ['South Africa', 'Nigeria', 'Kenya', 'Egypt'],
+    // Country list updated per reference doc "Worldwide Shipments" slide (S. Africa
+    // spelled out to match this site's naming convention elsewhere).
+    countries: ['South Africa', 'Morocco', 'Algeria', 'Egypt'],
     description: 'Expanding presence with focus on infrastructure development and local partnerships.',
     image: 'https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
     stats: {
@@ -60,7 +66,9 @@ const regions = [
   },
   {
     name: 'United States',
-    countries: ['East Coast', 'West Coast', 'Central', 'South'],
+    // Country list updated per reference doc "Worldwide Shipments" slide, which lists
+    // this region simply as 'USA' (no sub-region breakdown given).
+    countries: ['USA'],
     description: 'Strategic market expansion with focus on advanced fiber optic solutions.',
     image: 'https://images.unsplash.com/photo-1485738422979-f5c462d49f74?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
     stats: {
@@ -108,6 +116,12 @@ const RegionCard = ({ region }) => {
       <div className="p-6">
         <p className="text-gray-600 mb-4">{region.description}</p>
         
+        {/* All three stat tiles (Market Share, YoY Growth, Partners) removed from every
+            region card per request — the leftover single centered "Partners" tile still
+            read as a broken/misaligned fragment, so it's dropped too rather than patched.
+            Original 3-stat grid is commented out below (not deleted) — uncomment to
+            restore it (all three tiles, or trim back down to just one). */}
+        {/*
         <div className="grid grid-cols-3 gap-4 mb-6">
           <div className="text-center">
             <p className="text-2xl font-bold text-blue-600">{region.stats.marketShare}</p>
@@ -122,6 +136,7 @@ const RegionCard = ({ region }) => {
             <p className="text-sm text-gray-500">Partners</p>
           </div>
         </div>
+        */}
 
         <div className="flex flex-wrap gap-2 mb-4">
           {region.countries.map((country) => (

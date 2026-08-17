@@ -45,7 +45,6 @@ const csrInitiatives: CSRInitiative[] = [
       title: 'Sustainable Production Practices',
       description: 'Eco-conscious manufacturing for a greener future',
       details: [
-        'Recycled materials usage',
         'Water conservation systems',
         'Continual waste reduction'
       ]
