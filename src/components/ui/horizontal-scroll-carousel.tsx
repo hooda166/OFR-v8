@@ -2,7 +2,8 @@
 
 import * as React from "react";
 import { useMemo, useRef, useState } from "react";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { createPortal } from "react-dom";
+import { ChevronLeft, ChevronRight, X } from "lucide-react";
 
 interface ProductCard {
   name: string;
@@ -10,6 +11,9 @@ interface ProductCard {
   specs: string[];
   icon?: React.ElementType;
   image?: string;
+  // Optional multi-photo gallery. When set with 2+ entries, ProductCard renders a
+  // click-through/scrollable image viewer instead of the single static image.
+  images?: string[];
 }
 
 interface HorizontalScrollCarouselProps {
@@ -211,32 +215,170 @@ const HorizontalScrollCarousel: React.FC<HorizontalScrollCarouselProps> = ({
   );
 };
 
-const ProductCard: React.FC<{ product: ProductCard }> = ({ product }) => {
+// Products whose real product photos are shot on a plain background rather than filling
+// the frame — these render with 'object-contain' (whole item visible) instead of
+// 'object-cover' (frame filled, edges cropped). Shared by the single-image header and the
+// multi-image gallery below.
+const CONTAIN_FIT_PRODUCTS = [
+  'EAA Coated FRP',
+  'Standard FRP Rodder',
+  'Heavy Duty FRP Rodder',
+  'Uncoated ARP',
+  'Coated ARP',
+  'ADSS Cables (All-Dielectric Self-Supporting)',
+  'Duct Cables',
+  'Armoured Optical Cables',
+  // Renamed from 'Optical Splitters (PLC)' / 'Fiber Management Systems (FMS)'
+  // when Passive Components was trimmed to 4 products — kept here so the same
+  // images still render with 'object-contain' instead of being cropped.
+  'PLC Splitters',
+  'FMS/LIU',
+  'Patch Cords',
+  'Optical Coupler'
+];
+
+// Click-through / scrollable image viewer for products with more than one photo
+// (e.g. FMS/LIU). Renders a mini strip with prev/next + dot controls inside the card,
+// and clicking the image opens a full-screen lightbox to page through the full set.
+const ProductImageGallery: React.FC<{ images: string[]; name: string; icon?: React.ElementType }> = ({ images, name, icon: Icon }) => {
+  const [index, setIndex] = useState(0);
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const containFit = CONTAIN_FIT_PRODUCTS.includes(name);
+
+  const go = (e: React.MouseEvent | React.KeyboardEvent, dir: 1 | -1) => {
+    e.stopPropagation();
+    setIndex((i) => (i + dir + images.length) % images.length);
+  };
+
   return (
-    <div 
+    <>
+      <div
+        className="relative h-56 overflow-hidden cursor-pointer"
+        onClick={() => setLightboxOpen(true)}
+        role="button"
+        aria-label={`View ${name} photos`}
+      >
+        <img
+          src={images[index]}
+          className={`w-full h-full ${containFit ? 'object-contain' : 'object-cover'} object-center group-hover:scale-105 transition-transform duration-500`}
+          alt={`${name} — photo ${index + 1} of ${images.length}`}
+          loading="lazy"
+          onError={(e) => {
+            e.currentTarget.src = '/Assets/FTTH cable.jpg';
+          }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+        {Icon && (
+          <div className="absolute top-3 right-3">
+            <Icon className="h-6 w-6 text-white drop-shadow-lg" />
+          </div>
+        )}
+        <button
+          onClick={(e) => go(e, -1)}
+          className="absolute left-1.5 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-black/60 text-white rounded-full p-1 transition-colors"
+          aria-label="Previous photo"
+        >
+          <ChevronLeft className="h-4 w-4" />
+        </button>
+        <button
+          onClick={(e) => go(e, 1)}
+          className="absolute right-1.5 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-black/60 text-white rounded-full p-1 transition-colors"
+          aria-label="Next photo"
+        >
+          <ChevronRight className="h-4 w-4" />
+        </button>
+        <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-1.5">
+          {images.map((_, i) => (
+            <span
+              key={i}
+              onClick={(e) => {
+                e.stopPropagation();
+                setIndex(i);
+              }}
+              className={`h-1.5 w-1.5 rounded-full transition-colors ${i === index ? 'bg-white' : 'bg-white/50'}`}
+            />
+          ))}
+        </div>
+        <div className="absolute bottom-2 right-2 bg-black/50 text-white text-[10px] px-1.5 py-0.5 rounded">
+          {index + 1}/{images.length}
+        </div>
+      </div>
+
+      {lightboxOpen && createPortal(
+        // Rendered via a portal into document.body — the card ancestor uses Tailwind's
+        // `transform` utility (for the hover-lift effect), and a `transform` on an
+        // ancestor makes it the containing block for descendant `position: fixed`
+        // elements per the CSS spec. Without the portal the lightbox was trapped inside
+        // the card instead of covering the viewport.
+        <div
+          className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center px-4"
+          onClick={() => setLightboxOpen(false)}
+        >
+          <button
+            onClick={(e) => {
+              e.stopPropagation();
+              setLightboxOpen(false);
+            }}
+            className="absolute top-4 right-4 text-white/80 hover:text-white transition-colors"
+            aria-label="Close"
+          >
+            <X className="h-8 w-8" />
+          </button>
+          <img
+            src={images[index]}
+            alt={`${name} — photo ${index + 1} of ${images.length}`}
+            className="max-h-[85vh] max-w-[90vw] object-contain"
+            onClick={(e) => e.stopPropagation()}
+          />
+          <button
+            onClick={(e) => go(e, -1)}
+            className="absolute left-4 top-1/2 -translate-y-1/2 text-white bg-white/10 hover:bg-white/20 rounded-full p-3 transition-colors"
+            aria-label="Previous photo"
+          >
+            <ChevronLeft className="h-6 w-6" />
+          </button>
+          <button
+            onClick={(e) => go(e, 1)}
+            className="absolute right-4 top-1/2 -translate-y-1/2 text-white bg-white/10 hover:bg-white/20 rounded-full p-3 transition-colors"
+            aria-label="Next photo"
+          >
+            <ChevronRight className="h-6 w-6" />
+          </button>
+          <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2">
+            {images.map((_, i) => (
+              <span
+                key={i}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setIndex(i);
+                }}
+                className={`h-2 w-2 rounded-full transition-colors cursor-pointer ${i === index ? 'bg-white' : 'bg-white/40'}`}
+              />
+            ))}
+          </div>
+        </div>,
+        document.body
+      )}
+    </>
+  );
+};
+
+const ProductCard: React.FC<{ product: ProductCard }> = ({ product }) => {
+  const hasGallery = !!product.images && product.images.length > 1;
+  return (
+    <div
       className="group relative h-[480px] w-[300px] sm:w-[360px] lg:w-[380px] bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 flex-shrink-0"
       style={{ scrollSnapAlign: 'start' }} // Ensure cards snap into view properly
     >
-      {/* Header with optional image */}
-      {product.image && (
+      {/* Header with optional image(s) — multi-photo products get the click-through gallery */}
+      {hasGallery ? (
+        <ProductImageGallery images={product.images as string[]} name={product.name} icon={product.icon} />
+      ) : product.image && (
         // Use a slightly taller header so 'contain' images have room
         <div className="relative h-56 overflow-hidden">
           <img
             src={product.image}
-            className={`w-full h-full ${[
-              'EAA Coated FRP',
-              'Standard FRP Rodder',
-              'Heavy Duty FRP Rodder',
-              'Uncoated ARP',
-              'Coated ARP',
-              'ADSS Cables (All-Dielectric Self-Supporting)',
-              'Duct Cables',
-              // Renamed from 'Optical Splitters (PLC)' / 'Fiber Management Systems (FMS)'
-              // when Passive Components was trimmed to 4 products — kept here so the same
-              // images still render with 'object-contain' instead of being cropped.
-              'PLC Splitters',
-              'FMS/LIU'
-            ].includes(product.name) ? 'object-contain' : 'object-cover'} object-center group-hover:scale-105 transition-transform duration-500`}
+            className={`w-full h-full ${CONTAIN_FIT_PRODUCTS.includes(product.name) ? 'object-contain' : 'object-cover'} object-center group-hover:scale-105 transition-transform duration-500`}
             alt={product.name}
             loading="lazy"
             onError={(e) => {
@@ -256,7 +398,7 @@ const ProductCard: React.FC<{ product: ProductCard }> = ({ product }) => {
       {/* Content - Reduced padding */}
       <div className="p-4 sm:p-5 h-full flex flex-col">
         <div className="flex items-start mb-3">
-          {!product.image && product.icon && (
+          {!product.image && !hasGallery && product.icon && (
             <product.icon className="h-7 w-7 text-blue-600 mr-3 mt-1 flex-shrink-0" />
           )}
           <div>

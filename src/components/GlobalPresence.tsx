@@ -1,5 +1,5 @@
 import React from 'react';
-import { MapPin, Globe, TrendingUp, Users, Building, Handshake } from 'lucide-react';
+import { MapPin, Globe, Users, Handshake } from 'lucide-react';
 
 const regions = [
   {
@@ -149,33 +149,13 @@ const RegionCard = ({ region }) => {
           ))}
         </div>
 
-        {region.initiatives && (
-          <div className="mt-6">
-            <h4 className="font-semibold text-gray-900 mb-2">Key Initiatives</h4>
-            <ul className="space-y-2">
-              {region.initiatives.map((initiative, index) => (
-                <li key={index} className="flex items-center text-gray-600">
-                  <TrendingUp className="h-4 w-4 text-blue-600 mr-2" />
-                  {initiative}
-                </li>
-              ))}
-            </ul>
-          </div>
-        )}
-
-        {region.keyClients && (
-          <div className="mt-6">
-            <h4 className="font-semibold text-gray-900 mb-2">Key Clients</h4>
-            <ul className="space-y-2">
-              {region.keyClients.map((client, index) => (
-                <li key={index} className="flex items-center text-gray-600">
-                  <Building className="h-4 w-4 text-blue-600 mr-2" />
-                  {client}
-                </li>
-              ))}
-            </ul>
-          </div>
-        )}
+        {/* Key Initiatives (Africa) / Key Clients (USA) lists removed — only 2 of 5
+            cards carried this extra block, so the grid row stretched those two cards
+            against each other and left the shorter one with a large empty gap below
+            its list (and misaligned section headers vs. its row-mate, since
+            description line count also varies). Data still lives in the `regions`
+            array above if this needs to come back — pair it with a per-card min-height
+            or `items-start` on the grid to avoid the same stretch issue. */}
       </div>
     </div>
   );

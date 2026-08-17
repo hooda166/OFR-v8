@@ -254,23 +254,26 @@ const productCategories = [
         description: 'Heavy-duty armoured fiber optic cables for harsh environments and direct burial',
         specs: ['Steel armor protection', 'Rodent resistance', 'Crush protection', 'Direct burial capability', 'Fiber count: 2-288', 'Operating temperature: -40°C to +70°C'],
         icon: Shield,
-        // Updated with a real OFR product photo supplied via the images/spec pack.
-  image: '/assets/Armoured Cable (RAR).jpg'
+        // Updated per request (Aug 2026 image drop): 'Unitube Armoured Cable.heic' shows
+        // the corrugated steel armor layer, which is this product's defining spec, so it
+        // replaces the older stock photo. 'Unitube Cables' below keeps its own image.
+  image: '/assets/Armoured Cable (New).jpg'
       },
       {
         name: 'ADSS Cables (All-Dielectric Self-Supporting)',
         description: 'Self-supporting aerial cables for power line installations without metallic components',
         specs: ['Self-supporting design', 'All-dielectric construction', 'Aerial installation', 'High span capability', 'Span length: up to 200m', 'Wind/ice loading resistance'],
         icon: Zap,
-        // Updated with a real OFR aerial self-supporting cable photo supplied via the images/spec pack.
-  image: '/assets/ADSS Cable (RAR).jpg'
+        // Updated per request (Aug 2026 image drop) with a real OFR-branded ADSS cable photo.
+  image: '/assets/ADSS Cable (New).jpg'
       },
       {
         name: 'Duct Cables',
         description: 'Specialized cables designed for underground duct and conduit installations',
         specs: ['Duct installation optimized', 'Compact design', 'Easy pulling', 'High fiber count options', 'Fiber count: 2-144', 'Low friction jacket'],
         icon: Cable,
-  image: '/assets/Duct cable.webp'
+        // Updated per request (Aug 2026 image drop) with a real OFR-branded duct cable photo.
+  image: '/assets/Duct Cable (New).jpg'
       },
       {
         name: 'FTTH Cables (Fiber-to-the-Home)',
@@ -320,15 +323,26 @@ const productCategories = [
         description: 'Rack-mounted fiber management, distribution and Line Interconnection Unit (LIU) systems',
         specs: ['Fixed/Sliding/Wall-mount variants available', '19-inch rack mounting', 'High density design', 'Cable management', 'Port density: up to 144 ports', 'Modular design'],
         icon: Settings,
-        image: '/assets/FIber Management systems.jpg'
+        // Updated per request (Aug 2026 image drop): 5 real OFR Telecom FMS-24 Port photos
+        // (wall-mount enclosure, SC/UPC 1U rack panel top+open, LC/UPC 1U rack panel).
+        // `images` (plural) drives the click-through gallery in ProductCard; `image` is kept
+        // as a same-photo fallback for any code path that only reads the singular field.
+        image: '/assets/FMS-LIU 1.jpg',
+        images: [
+          '/assets/FMS-LIU 1.jpg',
+          '/assets/FMS-LIU 2.jpg',
+          '/assets/FMS-LIU 3.jpg',
+          '/assets/FMS-LIU 4.jpg',
+          '/assets/FMS-LIU 5.jpg'
+        ]
       },
       {
         name: 'Patch Cords',
         description: 'Pre-terminated patch cables for equipment connections',
         specs: ['Low insertion loss', 'Various lengths', 'Multiple connector types'],
         icon: Cable,
-        // Updated with a real, factory-tested patch cord photo supplied via the images/spec pack.
-        image: '/assets/Patch Cord (RAR).jpg'
+        // Updated per request (Aug 2026 image drop) with a real, factory-tested patch cord photo.
+        image: '/assets/Patch Cord (New).jpg'
       },
       {
         // Renamed from 'Optical Splitters (PLC)' per request.
@@ -336,8 +350,8 @@ const productCategories = [
         description: 'Planar Lightwave Circuit splitters for signal distribution in PON networks',
         specs: ['PLC technology', 'Multiple split ratios (1:2 to 1:64)', 'Low insertion loss', 'High reliability', 'Insertion loss: <4.3dB', 'Operating wavelength: 1260-1650nm'],
         icon: Network,
-        // Updated with a real product photo (1x16 PLC splitter) supplied via the images/spec pack.
-        image: '/assets/Optical Splitter (RAR).jpg'
+        // Updated per request (Aug 2026 image drop) with a real 1x16 PLC splitter photo.
+        image: '/assets/PLC Splitter (New).jpg'
       },
       {
         // Renamed from 'Optical Couplers' (singular per request).
@@ -345,7 +359,8 @@ const productCategories = [
         description: 'Fused fiber couplers for signal combining and splitting applications',
         specs: ['Fused biconical taper', 'Low excess loss', 'High directivity', 'Environmental stability', 'Coupling ratio: 10:90 to 50:50', 'Directivity: >55dB'],
         icon: Zap,
-        image: '/assets/optical couplers.jpg'
+        // Updated per request (Aug 2026 image drop) with a real fused coupler photo.
+        image: '/assets/Optical Coupler (New).jpg'
       }
 
       // ==================================================================
@@ -383,6 +398,12 @@ const productCategories = [
   // product entries below did not make the final 4-product list for
   // Passive Components, so they're retired here rather than re-added
   // individually. Its matching Navbar.tsx entry is commented out too.
+  //
+  // (Aug 2026 image drop) 5 real termination-box photos were supplied and, per request,
+  // held rather than wired in live: 'public/assets/Termination Box (Held) 1.jpg' through
+  // '5.jpg'. If this category is restored, swap the FTTH Termination Box product's `image`
+  // below for `images: ['/assets/Termination Box (Held) 1.jpg', ... '5.jpg']` to get the
+  // same click-through gallery the FMS/LIU product uses.
   // ====================================================================
   /*
   {
