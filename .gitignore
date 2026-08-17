@@ -1,0 +1,14 @@
+node_modules/
+dist/
+dist2/
+dist3/
+.DS_Store
+.env
+.env.local
+.vite/
+.staging_tmp/
+package-lock.json
+*.log
+/.idea/
+/.vscode/
+public/assets/**

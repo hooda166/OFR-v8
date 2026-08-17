@@ -18,9 +18,12 @@ const Footer = () => {
             <h3 className="text-xl font-bold mb-4">Products</h3>
             <ul className="space-y-2">
               <li><Link to="/products#frp-products" className="text-gray-400 hover:text-white">FRP Rods</Link></li>
-              <li><Link to="/products#arp-products" className="text-gray-400 hover:text-white">ARP Rods</Link></li>
+              {/* RETIRED — commented out, NOT deleted, per request: the ARP section was
+                  removed and merged into FRP, so #arp-products no longer exists on the
+                  products page. Uncomment if the standalone ARP section is restored. */}
+              {/* <li><Link to="/products#arp-products" className="text-gray-400 hover:text-white">ARP Rods</Link></li> */}
               <li><Link to="/products#optical-fiber-cables" className="text-gray-400 hover:text-white">Optical Fiber Cables</Link></li>
-              <li><Link to="/products#connectivity-accessories" className="text-gray-400 hover:text-white">Accessories</Link></li>
+              <li><Link to="/products#passive-components" className="text-gray-400 hover:text-white">Passive Components</Link></li>
             </ul>
           </div>
 

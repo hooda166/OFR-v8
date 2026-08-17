@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { Menu, X, Globe, Phone, ChevronDown, Cable, Box, Zap, Settings, Wrench, Layers, Shield, Network } from 'lucide-react';
+import { Menu, X, Globe, Phone, ChevronDown, Cable, Box, Zap, Wrench, Layers, Shield, Network } from 'lucide-react';
 import { useScrollSpy } from '../hooks/useScrollSpy';
 import { useScrollBehavior } from '../hooks/useScrollBehavior';
 
@@ -65,8 +65,12 @@ const Navbar = () => {
                 description: 'Comprehensive FRP reinforcement solutions',
                 icon: Cable,
                 id: 'frp-products'
-              },
-              {
+              }
+              // RETIRED — commented out, NOT deleted, per request: the ARP section was
+              // removed and its products merged into FRP (see Products.tsx). Uncomment to
+              // restore the nav entry if the standalone ARP section ever comes back.
+              /*
+              ,{
                 name: 'ARP Products',
                 href: '/products#arp-products',
                 description: 'Aramid reinforced plastic solutions',
@@ -80,8 +84,15 @@ const Navbar = () => {
                 icon: Wrench,
                 id: 'frp-rodder'
               }
+              */
             ]
           },
+          // RETIRED — commented out, NOT deleted, per request: the Cable Fillers &
+          // Materials section was removed from Products.tsx, and this was its only
+          // dropdown item, so the whole "Cable Materials" group is commented out too
+          // (an empty group would otherwise render with nothing under it). Uncomment
+          // both this block and the matching category in Products.tsx to restore.
+          /*
           {
             title: 'Cable Materials',
             items: [
@@ -94,6 +105,7 @@ const Navbar = () => {
               }
             ]
           },
+          */
           {
             title: 'Fiber Optic Systems',
             items: [
@@ -107,16 +119,9 @@ const Navbar = () => {
               {
                 name: 'Passive Components',
                 href: '/products#passive-components',
-                description: 'Splitters, couplers, connectors, pigtails',
+                description: 'Splitters, couplers, WDM, FMS, patch cords',
                 icon: Network,
                 id: 'passive-components'
-              },
-              {
-                name: 'Connectivity & Accessories',
-                href: '/products#connectivity-accessories',
-                description: 'FMS, patch cords, termination solutions',
-                icon: Settings,
-                id: 'connectivity-accessories'
               },
               {
                 name: 'FTTH Termination & Distribution',

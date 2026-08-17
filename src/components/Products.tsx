@@ -1,4 +1,8 @@
 import { useState, useEffect } from 'react';
+// NOTE: 'Wrench' is currently unused because its only uses (the 'FRP Rodder &
+// Installation Tools' category icon and 'Standard FRP Rodder' product icon) now live
+// inside a commented-out block below. Left in this import (not deleted) so the retired
+// section can be restored by uncommenting alone, per request.
 import { Cable, Box, Zap, Settings, Shield, Layers, Wrench, Network, Phone, ArrowRight } from 'lucide-react';
 import { useLocation } from 'react-router-dom';
 import { HorizontalScrollCarousel } from './ui/horizontal-scroll-carousel';
@@ -10,52 +14,117 @@ const productCategories = [
     icon: Cable,
     description: 'Comprehensive range of fiber reinforced plastic solutions for cable reinforcement',
     products: [
-        {
-          name: 'UV FRP',
-          description: 'Designed for excellent mechanical and flexible properties.',
-          specs: [
-              'High Flexibility',
-              'High tensile strength and lightweight',
-              'Non-conductive and corrosion-resistant',
-              'High-Tensile strength'
-          ],
-          icon: Zap,
-          image: '/assets/UV FRP.webp'
+      // ==================================================================
+      // ACTIVE PRODUCTS — per request, sourced from "WEBSITE .docx"
+      // ("COMPLETE PRODUCT PORTFOLIO" / "FIBRE/ARAMID REINFORCEMENT
+      // SOLUTIONS"). Only these 4 products render under FRP now. The old
+      // standalone ARP category was removed and its products folded in
+      // here as 'ARP Rods' — see the retired-category comment block below
+      // for the original ARP section, kept (not deleted) for reference.
+      // ==================================================================
+      {
+        name: 'UV FRP Rods',
+        description: 'Designed for excellent chemical & flexible properties',
+        specs: [
+          'High flexibility',
+          'High tensile strength & modulus',
+          'Available in diameters 0.5mm to 5.0mm',
+          'Fast delivery'
+        ],
+        icon: Zap,
+        image: '/assets/UV FRP.webp'
+      },
+      {
+        name: 'Thermal FRP Rods',
+        description: 'High quality smooth surface FRP with excellent mechanical & environmental properties',
+        specs: [
+          'Smooth surface',
+          'Splice-free long lengths',
+          'High tensile strength & modulus',
+          'Extreme environment condition suitable'
+        ],
+        icon: Zap,
+        image: '/assets/Thermal FRP.jpeg'
+      },
+      {
+        // Merged in from the retired standalone ARP category (see commented-out
+        // 'arp-products' block below) per request: "merge the products under ARP into FRP".
+        name: 'ARP Rods',
+        description: 'Aramid reinforced plastic rods with exceptional strength properties',
+        specs: [
+          'Ultra-high strength',
+          'Lightweight',
+          'High flexibility',
+          'Available in diameters 0.4mm to 1.2mm'
+        ],
+        icon: Shield,
+        image: '/assets/EAA Coated FRP.avif'
+      },
+      {
+        name: 'Coated FRP/ARP',
+        description: 'FRP with enhanced performance',
+        specs: [
+          'EAA coating for better adhesion with HDPE',
+          'HDPE/LDPE coating with high diameter & better flexibility',
+          'LSZH & PP coating for customised applications'
+        ],
+        icon: Layers,
+        image: '/assets/EAA Coated FRP.avif'
+      }
+
+      // ==================================================================
+      // RETIRED FRP PRODUCTS — commented out, NOT deleted, per request.
+      // This was the previous 8-product FRP lineup. Uncomment any entry
+      // below (and re-add a trailing comma to the preceding active
+      // product) to bring it back into the FRP section.
+      // ==================================================================
+      /*
+      ,{
+        name: 'UV FRP',
+        description: 'Designed for excellent mechanical and flexible properties.',
+        specs: [
+            'High Flexibility',
+            'High tensile strength and lightweight',
+            'Non-conductive and corrosion-resistant',
+            'High-Tensile strength'
+        ],
+        icon: Zap,
+        image: '/assets/UV FRP.webp'
       },
       {
         name: 'Thermal FRP',
         description: 'High quality smooth surface FRP with excellent mechanical and environmental properties',
         specs: ['Extreme environment applications', 'Smooth surface', 'Joint-free Long length FRP', 'High Tensile strength'],
         icon: Zap,
-  image: '/assets/Thermal FRP.jpeg'
+        image: '/assets/Thermal FRP.jpeg'
       },
       {
         name: 'Flat FRP',
         description: 'High-strength bare FRP rods for basic reinforcement applications',
         specs: ['Pure glass fiber construction', 'High tensile strength', 'Lightweight design', 'Cost-effective solution', 'Diameter range: 0.5mm to 25mm', 'Temperature resistance: -40°C to +85°C'],
         icon: Cable,
-  image: '/assets/Flat FRP.jpg'
+        image: '/assets/Flat FRP.jpg'
       },
       {
         name: 'EAA Coated FRP',
         description: 'Enhanced adhesion coating for superior bonding with cable materials',
         specs: ['EAA coating technology', 'Superior adhesion properties', 'Enhanced bonding strength', 'Improved cable performance', 'Coating thickness: 50-200 microns', 'Chemical resistance'],
         icon: Shield,
-  image: '/assets/EAA Coated FRP.avif'
+        image: '/assets/EAA Coated FRP.avif'
       },
       {
         name: 'HDPE/LDPE/LSZH Coated FRP',
         description: 'Multi-layer coated FRP for enhanced protection and performance',
         specs: ['Multiple coating options', 'Chemical resistance', 'Fire retardant properties', 'Enhanced durability', 'UV stabilized', 'Moisture barrier protection'],
         icon: Layers,
-  image: '/assets/HDPE FRP.png'
+        image: '/assets/HDPE FRP.png'
       },
       {
         name: 'Water Blocking FRP',
         description: 'Specialized FRP with water-blocking properties for moisture protection',
         specs: ['Water-blocking technology', 'Moisture protection', 'Swelling compounds', 'Long-term reliability', 'Gel formation capability', 'Submarine cable applications'],
         icon: Shield,
-  image: '/assets/Water blocking FRP.webp'
+        image: '/assets/Water blocking FRP.webp'
       },
       {
         // Placeholder photo (reused from the retired Uncoated Bare FRP listing) —
@@ -64,7 +133,7 @@ const productCategories = [
         description: 'Composite FRP rod with a steel wire core for applications needing extra tensile and crush strength',
         specs: ['FRP + steel wire composite core', 'Higher tensile strength than standard FRP', 'Enhanced crush resistance', 'Suited to armoured/aerial cable designs'],
         icon: Cable,
-  image: '/assets/Uncoated-bare-FRP.jpg'
+        image: '/assets/Uncoated-bare-FRP.jpg'
       },
       {
         // Placeholder photo (reused from the retired Uncoated Bare FRP listing) —
@@ -73,10 +142,22 @@ const productCategories = [
         description: 'Composite FRP rod with an integrated copper wire, used where cables also need to carry power or signalling',
         specs: ['FRP + copper wire composite core', 'Combined strength member and conductor', 'Suited to hybrid opto-electrical cables', 'Cost-effective solution'],
         icon: Cable,
-  image: '/assets/Uncoated-bare-FRP.jpg'
+        image: '/assets/Uncoated-bare-FRP.jpg'
       }
+      */
     ]
   },
+
+  // ====================================================================
+  // RETIRED CATEGORY — "ARP (Aramid Reinforced Plastic)" section.
+  // Commented out, NOT deleted, per request: "Remove the ARP section
+  // entirely and merge the products under ARP into FRP." Its products now
+  // live inside the 'frp-products' category above as 'ARP Rods' and
+  // 'Coated FRP/ARP'. To fully restore ARP as its own top-level section,
+  // uncomment this block AND restore its matching entries in Navbar.tsx
+  // and Footer.tsx (also commented out, not deleted, for the same reason).
+  // ====================================================================
+  /*
   {
     id: 'arp-products',
     title: 'ARP (Aramid Reinforced Plastic)',
@@ -89,17 +170,26 @@ const productCategories = [
         specs: ['Aramid fiber construction', 'Ultra-high strength', 'Lightweight', 'Chemical resistance', 'Tensile strength: >3000 MPa', 'Military grade applications'],
         icon: Shield,
         // Updated per request: reuse the real EAA Coated FRP drum/reel photo for both ARP entries.
-  image: '/assets/EAA Coated FRP.avif'
+        image: '/assets/EAA Coated FRP.avif'
       },
       {
         name: 'Coated ARP',
         description: 'Coated ARP with enhanced surface properties and protection',
         specs: ['Protective coating', 'Enhanced durability', 'Improved handling', 'Extended service life', 'Abrasion resistance', 'Aerospace applications'],
         icon: Layers,
-  image: '/assets/EAA Coated FRP.avif'
+        image: '/assets/EAA Coated FRP.avif'
       }
     ]
   },
+  */
+
+  // ====================================================================
+  // RETIRED CATEGORY — "FRP Rodder & Installation Tools" section.
+  // Commented out, NOT deleted, per request. Uncomment this block AND its
+  // matching Navbar.tsx entry to restore. Note: also re-add 'Wrench' back
+  // to the lucide-react import at the top of this file if restored.
+  // ====================================================================
+  /*
   {
     id: 'frp-rodder',
     title: 'FRP Rodder & Installation Tools',
@@ -111,17 +201,25 @@ const productCategories = [
         description: 'High-quality FRP rodders for cable pulling and installation work',
         specs: ['Various lengths available', 'High flexibility', 'Excellent pushing force', 'Durable construction', 'Lengths: 50m to 500m', 'Diameter: 4mm to 16mm'],
         icon: Wrench,
-  image: '/assets/FRP rodder.jpg'
+        image: '/assets/FRP rodder.jpg'
       },
       {
         name: 'Heavy Duty FRP Rodder',
         description: 'Industrial-grade rodders for demanding installation environments',
         specs: ['Enhanced strength', 'Extended length options', 'Superior durability', 'Professional grade', 'Load capacity: up to 2000N', 'Underground installation'],
         icon: Settings,
-  image: '/assets/Heavy duty FRP rodder.webp'
+        image: '/assets/Heavy duty FRP rodder.webp'
       }
     ]
   },
+  */
+  // ====================================================================
+  // RETIRED CATEGORY — "Cable Fillers & Materials" section.
+  // Commented out, NOT deleted, per request. Its matching Navbar.tsx
+  // dropdown group ("Cable Materials") is commented out too, for the
+  // same reason. Uncomment both blocks to restore this section.
+  // ====================================================================
+  /*
   {
     id: 'cable-fillers',
     title: 'Cable Fillers & Materials',
@@ -133,17 +231,18 @@ const productCategories = [
         description: 'High-density polyethylene fillers for cable void filling and structural support',
         specs: ['High-density polyethylene', 'Excellent chemical resistance', 'Structural support', 'Void filling', 'Density: 0.94-0.97 g/cm³', 'Temperature range: -40°C to +80°C'],
         icon: Box,
-  image: '/assets/HDPE Filler.jpg'
+        image: '/assets/HDPE Filler.jpg'
       },
       {
         name: 'LDPE Fillers',
         description: 'Low-density polyethylene fillers for flexible cable applications',
         specs: ['Low-density polyethylene', 'Flexibility', 'Easy processing', 'Cost-effective', 'Density: 0.91-0.93 g/cm³', 'Excellent flexibility'],
         icon: Layers,
-  image: '/assets/LDPE FIller.webp'
+        image: '/assets/LDPE FIller.webp'
       }
     ]
   },
+  */
   {
     id: 'optical-fiber-cables',
     title: 'Optical Fiber Cables',
@@ -200,9 +299,9 @@ const productCategories = [
   },
   {
     id: 'passive-components',
-    title: 'Passive Optical Components',
+    title: 'Passive Components',
     icon: Network,
-    description: 'Essential passive components for fiber optic network infrastructure',
+    description: 'Essential passive optical components and connectivity accessories for fiber optic network infrastructure',
     products: [
       {
         name: 'Optical Splitters (PLC)',
@@ -225,15 +324,7 @@ const productCategories = [
         specs: ['CWDM/DWDM options', 'Low insertion loss', 'High isolation', 'Compact design', 'Channel spacing: 0.8nm-20nm', 'Isolation: >30dB'],
         icon: Settings,
   image: '/assets/WDM.avif'
-      }
-    ]
-  },
-  {
-    id: 'connectivity-accessories',
-    title: 'Connectivity & Accessories',
-    icon: Settings,
-    description: 'Complete range of fiber optic connectivity solutions and installation accessories',
-    products: [
+      },
       {
         name: 'Fiber Management Systems (FMS)',
         description: 'Rack-mounted fiber management and distribution systems',

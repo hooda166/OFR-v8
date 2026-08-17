@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import { ArrowRight, Globe, Shield, Target, Users, Zap, MapPin, Award, Phone, Network, Satellite, Cable, Box, Wrench, Settings } from 'lucide-react';
+import { ArrowRight, Globe, Shield, Target, Users, Zap, MapPin, Award, Phone, Network, Satellite, Cable } from 'lucide-react';
 import VideoBackground from '../components/VideoBackground';
 
 const HomePage = () => {
@@ -18,22 +18,23 @@ const HomePage = () => {
 
   const productCategories = [
     {
+      // Product list updated to match the 4 active FRP products in Products.tsx (sourced
+      // from "WEBSITE .docx"). ARP is folded into FRP here too — its standalone card
+      // below is commented out (not deleted) per request, since ARP is no longer a
+      // separate section on the products page.
       id: 'frp-products',
       title: 'FRP Products',
       // use EAA coated FRP image instead so it's a different product image from the section
       image: '/assets/EAA Coated FRP.avif',
-      description: 'Comprehensive fiber reinforced plastic solutions for cable reinforcement',
+      description: 'Comprehensive fiber and aramid reinforced plastic solutions for cable reinforcement',
       icon: Cable,
-      products: ['Uncoated Bare FRP', 'EAA Coated FRP', 'Water Blocking FRP', 'Thermal FRP']
+      products: ['UV FRP Rods', 'Thermal FRP Rods', 'ARP Rods', 'Coated FRP/ARP']
     },
-    {
-      id: 'frp-rodder',
-      title: 'FRP Rodder & Tools',
-      image: '/assets/FRP rodder.jpg',
-      description: 'Professional installation tools and rodders',
-      icon: Wrench,
-      products: ['Standard FRP Rodder', 'Heavy Duty Rodder']
-    },
+    // RETIRED — commented out, NOT deleted, per request: the ARP section was removed and
+    // merged into FRP (see Products.tsx), and #arp-products no longer exists on the
+    // products page, so this card's "View Details" link would 404 to nowhere. Uncomment
+    // if the standalone ARP section is ever restored.
+    /*
     {
       id: 'arp-products',
       title: 'ARP Products',
@@ -43,14 +44,7 @@ const HomePage = () => {
       icon: Shield,
       products: ['Uncoated ARP', 'Coated ARP']
     },
-    {
-      id: 'cable-fillers',
-      title: 'Cable Fillers',
-      image: '/assets/HDPE Filler.jpg',
-      description: 'Quality filling materials for cable construction',
-      icon: Box,
-      products: ['HDPE Fillers', 'LDPE Fillers']
-    },
+    */
     {
       id: 'optical-fiber-cables',
       title: 'Optical Fiber Cables',
@@ -63,17 +57,9 @@ const HomePage = () => {
       id: 'passive-components',
       title: 'Passive Components',
       image: '/assets/Optical splitter.jpg',
-      description: 'Essential passive optical components',
+      description: 'Essential passive optical components and connectivity accessories',
       icon: Network,
-      products: ['Optical Splitters', 'Couplers', 'WDM Devices', 'Attenuators', 'Pigtails', 'Connectors', 'Adapters']
-    },
-    {
-      id: 'connectivity-accessories',
-      title: 'Connectivity & Accessories',
-      image: '/assets/FIber Management systems.jpg',
-      description: 'Complete connectivity and installation accessories',
-      icon: Settings,
-      products: ['FMS/FDMS', 'Patch Cords', 'Termination Boxes', 'Splice Closures']
+      products: ['Optical Splitters (PLC)', 'Optical Couplers', 'WDM Devices', 'Fiber Management Systems (FMS)', 'Fiber Distribution Management Systems (FDMS)', 'Patch Cords']
     }
   ];
 
@@ -205,7 +191,7 @@ const HomePage = () => {
                   <img
                     src={category.image}
                     alt={category.title}
-                    className={`w-full h-56 ${['frp-rodder','passive-components','connectivity-accessories','frp-products','arp-products'].includes(category.id) ? 'object-contain' : 'object-cover'} group-hover:scale-110 transition-transform duration-500`}
+                    className={`w-full h-56 ${['passive-components','frp-products','arp-products'].includes(category.id) ? 'object-contain' : 'object-cover'} group-hover:scale-110 transition-transform duration-500`}
                     loading="lazy"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
