@@ -24,8 +24,8 @@ const HomePage = () => {
       // separate section on the products page.
       id: 'frp-products',
       title: 'FRP Products',
-      // use EAA coated FRP image instead so it's a different product image from the section
-      image: '/assets/EAA Coated FRP.avif',
+      // Synced with the Products page: same photo now shown for the first FRP product (UV FRP Rods).
+      image: '/assets/UV FRP Rods 1.jpg',
       description: 'Comprehensive fiber and aramid reinforced plastic solutions for cable reinforcement',
       icon: Cable,
       products: ['UV FRP Rods', 'Thermal FRP Rods', 'ARP Rods', 'Coated FRP/ARP']
@@ -48,7 +48,8 @@ const HomePage = () => {
     {
       id: 'optical-fiber-cables',
       title: 'Optical Fiber Cables',
-      image: '/assets/armoured Optical fibre cable.jpg',
+      // Synced with the Products page: same photo now shown for Armoured Optical Cables.
+      image: '/assets/Armoured Cable (New).jpg',
       description: 'Complete range of fiber optic cables',
       icon: Zap,
       products: ['Armoured Cables', 'ADSS Cables', 'Duct Cables', 'FTTH Cables']
@@ -59,7 +60,8 @@ const HomePage = () => {
       // FDMS were dropped per request).
       id: 'passive-components',
       title: 'Passive Components',
-      image: '/assets/Optical splitter.jpg',
+      // Synced with the Products page: same photo now shown for FMS/LIU.
+      image: '/assets/FMS-LIU 1.jpg',
       description: 'Essential passive optical components, connectivity and LIU distribution hardware',
       icon: Network,
       products: ['FMS/LIU', 'Patch Cords', 'PLC Splitters', 'Optical Coupler']

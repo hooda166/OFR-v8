@@ -117,7 +117,7 @@ const Contact = () => {
                   <div className="flex items-start">
                     <MapPin className="h-6 w-6 text-blue-600 mt-1" />
                     <div className="ml-4">
-                      <p className="font-medium text-gray-900">Works</p>
+                      <p className="font-medium text-gray-900">Factory</p>
                       <p className="text-gray-600">
                         OFR TELECOM PVT LTD<br />
                         F-281, F-282, F-283 &amp; F-284,<br />

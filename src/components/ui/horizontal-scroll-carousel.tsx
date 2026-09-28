@@ -228,6 +228,11 @@ const CONTAIN_FIT_PRODUCTS = [
   'ADSS Cables (All-Dielectric Self-Supporting)',
   'Duct Cables',
   'Armoured Optical Cables',
+  // Both shot on a plain background with the product occupying only part of the
+  // frame (thin flat cable / narrow tube) -- object-cover was cropping them down
+  // to mostly empty background, making the product barely visible.
+  'FTTH Flat Cables',
+  'Unitube Cables',
   // Renamed from 'Optical Splitters (PLC)' / 'Fiber Management Systems (FMS)'
   // when Passive Components was trimmed to 4 products — kept here so the same
   // images still render with 'object-contain' instead of being cropped.
