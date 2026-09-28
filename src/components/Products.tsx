@@ -32,7 +32,14 @@ const productCategories = [
           'Fast delivery'
         ],
         icon: Zap,
-        image: '/assets/UV FRP.webp'
+        // Real OFR Telecom UV FRP rod photos (Sep 2026 drop from Javed Abidi). `images` drives the click-through gallery; `image` is the same first photo kept as a fallback.
+        image: '/assets/UV FRP Rods 1.jpg',
+        images: [
+          '/assets/UV FRP Rods 1.jpg',
+          '/assets/UV FRP Rods 2.jpg',
+          '/assets/UV FRP Rods 3.jpg',
+          '/assets/UV FRP Rods 4.jpg',
+        ]
       },
       {
         name: 'Thermal FRP Rods',
@@ -44,7 +51,14 @@ const productCategories = [
           'Extreme environment condition suitable'
         ],
         icon: Zap,
-        image: '/assets/Thermal FRP.jpeg'
+        // Real OFR Telecom Thermal FRP rod photos (Sep 2026 drop from Javed Abidi). `images` drives the click-through gallery; `image` is the same first photo kept as a fallback.
+        image: '/assets/Thermal FRP Rods 1.jpg',
+        images: [
+          '/assets/Thermal FRP Rods 1.jpg',
+          '/assets/Thermal FRP Rods 2.jpg',
+          '/assets/Thermal FRP Rods 3.jpg',
+          '/assets/Thermal FRP Rods 4.jpg',
+        ]
       },
       {
         // Merged in from the retired standalone ARP category (see commented-out
@@ -58,7 +72,13 @@ const productCategories = [
           'Available in diameters 0.4mm to 1.2mm'
         ],
         icon: Shield,
-        image: '/assets/EAA Coated FRP.avif'
+        // Real OFR Telecom ARP rod photos (Sep 2026 drop from Javed Abidi), replacing the placeholder EAA-coated-FRP shot. `images` drives the click-through gallery; `image` is the same first photo kept as a fallback.
+        image: '/assets/ARP Rods 1.jpg',
+        images: [
+          '/assets/ARP Rods 1.jpg',
+          '/assets/ARP Rods 2.jpg',
+          '/assets/ARP Rods 3.jpg',
+        ]
       },
       {
         name: 'Coated FRP/ARP',
@@ -69,7 +89,16 @@ const productCategories = [
           'LSZH & PP coating for customised applications'
         ],
         icon: Layers,
-        image: '/assets/EAA Coated FRP.avif'
+        // Real OFR Telecom UV-jacketed/coated FRP photos (Sep 2026 drop from Javed Abidi,
+        // 'UPJACKET FRP'), replacing the placeholder EAA-coated-FRP shot. `images` drives
+        // the click-through gallery; `image` is the same first photo kept as a fallback.
+        image: '/assets/Coated FRP-ARP 1.jpg',
+        images: [
+          '/assets/Coated FRP-ARP 1.jpg',
+          '/assets/Coated FRP-ARP 2.jpg',
+          '/assets/Coated FRP-ARP 3.jpg',
+          '/assets/Coated FRP-ARP 4.jpg',
+        ]
       }
 
       // ==================================================================
