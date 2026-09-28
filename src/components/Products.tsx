@@ -38,7 +38,6 @@ const productCategories = [
           '/assets/UV FRP Rods 1.jpg',
           '/assets/UV FRP Rods 2.jpg',
           '/assets/UV FRP Rods 3.jpg',
-          '/assets/UV FRP Rods 4.jpg',
         ]
       },
       {
@@ -57,7 +56,6 @@ const productCategories = [
           '/assets/Thermal FRP Rods 1.jpg',
           '/assets/Thermal FRP Rods 2.jpg',
           '/assets/Thermal FRP Rods 3.jpg',
-          '/assets/Thermal FRP Rods 4.jpg',
         ]
       },
       {
@@ -97,7 +95,6 @@ const productCategories = [
           '/assets/Coated FRP-ARP 1.jpg',
           '/assets/Coated FRP-ARP 2.jpg',
           '/assets/Coated FRP-ARP 3.jpg',
-          '/assets/Coated FRP-ARP 4.jpg',
         ]
       }
 
