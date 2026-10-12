@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Mail, Phone, MapPin, Send, CheckCircle, AlertCircle } from 'lucide-react';
+import { Mail, MapPin, Send, CheckCircle, AlertCircle } from 'lucide-react';
 
 // Contact inbox: where "Send Message" submissions should land if the
 // database isn't configured yet (or as a manual fallback either way).
@@ -104,10 +104,6 @@ const Contact = () => {
                         767, SECTOR-29,<br />
                         FARIDABAD-121008,<br />
                         HARYANA
-                      </p>
-                      <p className="text-gray-600 flex items-center mt-2">
-                        <Phone className="h-4 w-4 text-blue-600 mr-2 flex-shrink-0" />
-                        0124-4045351
                       </p>
                     </div>
                   </div>
