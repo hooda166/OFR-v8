@@ -98,16 +98,12 @@ const Contact = () => {
                   <div className="flex items-start">
                     <MapPin className="h-6 w-6 text-blue-600 mt-1" />
                     <div className="ml-4">
-                      <p className="font-medium text-gray-900">Registered Office</p>
+                      <p className="font-medium text-gray-900">Sales Office &ndash; Gurugram</p>
                       <p className="text-gray-600">
                         OFR TELECOM PVT LTD<br />
-                        767, SECTOR-29,<br />
-                        FARIDABAD-121008,<br />
-                        HARYANA
-                      </p>
-                      <p className="text-gray-600 flex items-center mt-2">
-                        <Phone className="h-4 w-4 text-blue-600 mr-2 flex-shrink-0" />
-                        0124-4045351
+                        903, 9th Floor, ILD Trade Centre,<br />
+                        Sector-47, Sohna Road,<br />
+                        GURUGRAM, HARYANA
                       </p>
                     </div>
                   </div>
@@ -133,12 +129,16 @@ const Contact = () => {
                   <div className="flex items-start">
                     <MapPin className="h-6 w-6 text-blue-600 mt-1" />
                     <div className="ml-4">
-                      <p className="font-medium text-gray-900">Sales Office &ndash; Gurugram</p>
+                      <p className="font-medium text-gray-900">Registered Office</p>
                       <p className="text-gray-600">
                         OFR TELECOM PVT LTD<br />
-                        903, 9th Floor, ILD Trade Centre,<br />
-                        Sector-47, Sohna Road,<br />
-                        GURUGRAM, HARYANA
+                        767, SECTOR-29,<br />
+                        FARIDABAD-121008,<br />
+                        HARYANA
+                      </p>
+                      <p className="text-gray-600 flex items-center mt-2">
+                        <Phone className="h-4 w-4 text-blue-600 mr-2 flex-shrink-0" />
+                        0124-4045351
                       </p>
                     </div>
                   </div>
